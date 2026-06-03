@@ -1,6 +1,5 @@
 .DS_Store
 .agent/
-.github/workflows/
 node_modules/
 dist/
 coverage/
