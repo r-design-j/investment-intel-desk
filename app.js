@@ -2,7 +2,8 @@ const state = {
   data: null,
   newsFilter: "All",
   navTimer: null,
-  resizeTimer: null
+  resizeTimer: null,
+  hashSyncTimers: []
 };
 
 const escapeHtml = (value) => String(value ?? "")
@@ -57,6 +58,10 @@ function createFallbackData(message = "daily.json 暂不可用") {
     news: [],
     calendar: [],
     knowledge: [],
+    beginnerLessons: [],
+    forecasts: {},
+    fundWatchlist: [],
+    guruPortfolios: { managers: [] },
     playbooks: [],
     publishingLoop: [],
     sources: [],
@@ -78,6 +83,14 @@ function normalizeDailyData(data) {
     news: ensureArray(data?.news),
     calendar: ensureArray(data?.calendar),
     knowledge: ensureArray(data?.knowledge),
+    beginnerLessons: ensureArray(data?.beginnerLessons),
+    forecasts: data?.forecasts || fallback.forecasts,
+    fundWatchlist: ensureArray(data?.fundWatchlist),
+    guruPortfolios: {
+      ...fallback.guruPortfolios,
+      ...(data?.guruPortfolios || {}),
+      managers: ensureArray(data?.guruPortfolios?.managers)
+    },
     playbooks: ensureArray(data?.playbooks),
     publishingLoop: ensureArray(data?.publishingLoop),
     sources: ensureArray(data?.sources),
@@ -130,16 +143,20 @@ function render() {
   renderList("#guardrails", data.risk.guardrails);
   renderMarkets(data.markets);
   renderScenarios(data.scenarios);
+  renderForecasts(data.forecasts);
+  renderFundWatchlist(data.fundWatchlist);
   renderNewsFilters(data.news);
   renderNews(data.news);
   renderCalendar(data.calendar);
+  renderBeginnerLessons(data.beginnerLessons);
   renderKnowledge(data.knowledge);
+  renderGuruPortfolios(data.guruPortfolios);
   renderPlaybooks(data.playbooks);
   renderPublishingLoop(data.publishingLoop);
   renderSources(data.sources);
   renderDiagnostics(data.updateDiagnostics || []);
   drawPulseChart(data.markets);
-  syncHashTargetPosition();
+  scheduleHashSync();
   updateActiveNav();
 }
 
@@ -245,6 +262,41 @@ function renderScenarios(scenarios) {
   `).join("") : `<div class="empty-state">等待情景模型</div>`;
 }
 
+function renderForecasts(forecasts) {
+  const items = [forecasts?.tomorrow, forecasts?.week, forecasts?.bigPicture].filter(Boolean);
+  const label = (item) => item.title || "预测";
+  el("#forecastGrid").innerHTML = items.length ? items.map((item) => `
+    <article class="forecast-card">
+      <div class="project-meta">
+        <span>${escapeHtml(label(item))}</span>
+        <span>${escapeHtml(item.confidence || "非个性化")}</span>
+      </div>
+      <h3>${escapeHtml(item.direction)}</h3>
+      <p>${escapeHtml(item.thesis)}</p>
+      <ul>${ensureArray(item.watch).map((point) => `<li>${escapeHtml(point)}</li>`).join("")}</ul>
+      <div class="novice-note">${escapeHtml(item.noviceMove || "先观察，再决策。")}</div>
+    </article>
+  `).join("") : `<div class="empty-state">等待预测模型</div>`;
+}
+
+function renderFundWatchlist(items) {
+  el("#fundWatchlist").innerHTML = items.length ? items.map((item) => `
+    <article class="fund-card">
+      <div class="fund-card__top">
+        <h3>${escapeHtml(item.bucket)}</h3>
+        <span class="badge">${ensureArray(item.examples).map(escapeHtml).join(" / ")}</span>
+      </div>
+      <p>${escapeHtml(item.role)}</p>
+      <dl>
+        <div><dt>适合情况</dt><dd>${escapeHtml(item.suitableFor)}</dd></div>
+        <div><dt>购买前建议</dt><dd>${escapeHtml(item.buyGuidance)}</dd></div>
+        <div><dt>今天怎么看</dt><dd>${escapeHtml(item.currentRead)}</dd></div>
+        <div><dt>主要风险</dt><dd>${escapeHtml(item.risk)}</dd></div>
+      </dl>
+    </article>
+  `).join("") : `<div class="empty-state">等待基金观察池</div>`;
+}
+
 function renderNewsFilters(news) {
   const categories = ["All", ...new Set(news.map((item) => item.category).filter(Boolean))];
   if (!categories.includes(state.newsFilter)) state.newsFilter = "All";
@@ -282,6 +334,18 @@ function renderCalendar(calendar) {
   `).join("") : `<div class="empty-state">等待宏观日历</div>`;
 }
 
+function renderBeginnerLessons(lessons) {
+  el("#beginnerLessons").innerHTML = lessons.length ? lessons.map((item, index) => `
+    <article class="lesson-card">
+      <span class="lesson-index">第 ${index + 1} 课</span>
+      <h3>${escapeHtml(item.title)}</h3>
+      <p>${escapeHtml(item.plain)}</p>
+      <div><strong>举个例子</strong><span>${escapeHtml(item.example)}</span></div>
+      <div><strong>今天检查</strong><span>${escapeHtml(item.todayCheck)}</span></div>
+    </article>
+  `).join("") : `<div class="empty-state">等待小白知识卡</div>`;
+}
+
 function renderKnowledge(knowledge) {
   el("#knowledgeMap").innerHTML = knowledge.length ? knowledge.map((item) => `
     <article class="knowledge-card">
@@ -290,6 +354,29 @@ function renderKnowledge(knowledge) {
       <ul>${ensureArray(item.checkpoints).map((point) => `<li>${escapeHtml(point)}</li>`).join("")}</ul>
     </article>
   `).join("") : `<div class="empty-state">等待知识模块</div>`;
+}
+
+function renderGuruPortfolios(portfolios) {
+  const managers = ensureArray(portfolios?.managers);
+  el("#guruPortfolioNote").textContent = portfolios?.note || "公开持仓只用于学习，不代表实时买卖。";
+  el("#guruPortfolioGrid").innerHTML = managers.length ? managers.map((manager) => `
+    <article class="guru-card">
+      <div class="guru-card__head">
+        <h3><a href="${escapeHtml(manager.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(manager.name)}</a></h3>
+        <span class="badge">${escapeHtml(manager.reportDate || "report")}</span>
+      </div>
+      <p>${escapeHtml(manager.lesson || "只作为公开披露观察。")}</p>
+      <p class="guru-meta">披露日 ${escapeHtml(manager.filingDate || "未知")} · 报告期 ${escapeHtml(manager.reportDate || "未知")}</p>
+      <ol>
+        ${ensureArray(manager.topHoldings).map((holding) => `
+          <li>
+            <span>${escapeHtml(holding.issuer)}</span>
+            <strong>约 $${formatNumber(holding.valueMillions, "M")}</strong>
+          </li>
+        `).join("")}
+      </ol>
+    </article>
+  `).join("") : `<div class="empty-state">等待公开持仓数据</div>`;
 }
 
 function renderPlaybooks(playbooks) {
@@ -452,6 +539,14 @@ function syncHashTargetPosition() {
   });
 }
 
+function scheduleHashSync() {
+  state.hashSyncTimers.forEach((timer) => window.clearTimeout(timer));
+  state.hashSyncTimers = [0, 250, 900, 1600].map((delay) => window.setTimeout(() => {
+    syncHashTargetPosition();
+    updateActiveNav();
+  }, delay));
+}
+
 el("#refreshButton")?.addEventListener("click", loadDaily);
 window.addEventListener("resize", () => {
   if (!state.data) return;
@@ -465,17 +560,10 @@ window.addEventListener("scroll", () => {
   window.clearTimeout(state.navTimer);
   state.navTimer = window.setTimeout(updateActiveNav, 40);
 }, { passive: true });
-window.addEventListener("hashchange", () => window.setTimeout(() => {
-  syncHashTargetPosition();
-  updateActiveNav();
-}, 80));
-window.addEventListener("load", () => window.setTimeout(() => {
-  syncHashTargetPosition();
-  updateActiveNav();
-}, 250));
+window.addEventListener("hashchange", scheduleHashSync);
+window.addEventListener("load", scheduleHashSync);
 document.fonts?.ready.then(() => {
-  syncHashTargetPosition();
-  updateActiveNav();
+  scheduleHashSync();
 });
 document.addEventListener("click", (event) => {
   const button = event.target.closest("[data-news-filter]");

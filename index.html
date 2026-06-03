@@ -16,10 +16,12 @@
         <span>IID</span>
       </a>
       <nav class="primary-nav" aria-label="页面导航">
-        <a class="nav-link is-active" href="#top"><span class="nav-icon nav-icon--home" aria-hidden="true"></span>HOME</a>
-        <a class="nav-link" href="#brief"><span class="nav-icon nav-icon--about" aria-hidden="true"></span>BRIEF</a>
-        <a class="nav-link" href="#pulse"><span class="nav-icon nav-icon--case" aria-hidden="true"></span>SIGNALS</a>
-        <a class="nav-link" href="#news"><span class="nav-icon nav-icon--play" aria-hidden="true"></span>RADAR</a>
+        <a class="nav-link is-active" href="#top"><span class="nav-icon nav-icon--home" aria-hidden="true"></span>首页</a>
+        <a class="nav-link" href="#brief"><span class="nav-icon nav-icon--about" aria-hidden="true"></span>今天</a>
+        <a class="nav-link" href="#forecast"><span class="nav-icon nav-icon--case" aria-hidden="true"></span>预测</a>
+        <a class="nav-link" href="#funds"><span class="nav-icon nav-icon--play" aria-hidden="true"></span>基金</a>
+        <a class="nav-link" href="#learn"><span class="nav-icon nav-icon--about" aria-hidden="true"></span>小白</a>
+        <a class="nav-link" href="#news"><span class="nav-icon nav-icon--case" aria-hidden="true"></span>新闻</a>
       </nav>
       <div class="header-actions">
         <span id="asOf" class="timestamp">加载中</span>
@@ -52,8 +54,8 @@
           <p id="briefText" class="hero-summary">正在载入公开市场数据和每日研究快照。</p>
           <div id="briefTags" class="tag-row"></div>
           <div class="hero-actions">
-            <a class="primary-button" href="#pulse"><span aria-hidden="true">↗</span> 查看今日脉搏</a>
-            <a class="secondary-button" href="#news">阅读新闻雷达</a>
+            <a class="primary-button" href="#forecast"><span aria-hidden="true">↗</span> 看明日/本周预测</a>
+            <a class="secondary-button" href="#funds">看基金观察池</a>
           </div>
         </div>
 
@@ -81,10 +83,10 @@
       </section>
 
       <section id="brief" class="section-block about-board" aria-label="今日总览" data-od-id="daily-brief">
-        <p class="hand-label">about today's brief!</p>
+        <p class="hand-label">today, in plain words</p>
         <div class="section-title">
-          <p class="eyebrow selected-label">what's up</p>
-          <h2>我们把复杂的市场噪声，拆成可复核的每日行动边界。</h2>
+          <p class="eyebrow selected-label">今天怎么看</p>
+          <h2>先看大方向，再决定今天什么都不做、观察，还是复核仓位。</h2>
         </div>
         <div class="summary-grid">
           <article class="panel panel--lead tilt-card">
@@ -98,6 +100,32 @@
             <ul id="guardrails" class="clean-list"></ul>
           </article>
         </div>
+      </section>
+
+      <section id="forecast" class="section-block forecast-board" aria-label="明日与本周预测" data-od-id="forecast-system">
+        <div class="section-title section-title--split">
+          <div>
+            <p class="hand-label">tomorrow and this week</p>
+            <h2>明日预测 / 本周预测</h2>
+          </div>
+          <p>预测只给方向、关键变量和新手动作边界，不做个性化买卖指令。</p>
+        </div>
+        <div id="forecastGrid" class="forecast-grid"></div>
+      </section>
+
+      <section id="funds" class="section-block fund-board" aria-label="基金观察池" data-od-id="fund-watchlist">
+        <div class="section-title section-title--split">
+          <div>
+            <p class="hand-label">funds for beginners</p>
+            <h2>基金观察池</h2>
+          </div>
+          <p>这里给具体基金/ETF 例子，但定位是学习和观察，不等于“现在买入”。</p>
+        </div>
+        <div class="advice-boundary">
+          <strong>买前底线</strong>
+          <span>先有现金桶，再做长期配置；先看费用、风险、期限和仓位上限，再看收益。</span>
+        </div>
+        <div id="fundWatchlist" class="fund-grid"></div>
       </section>
 
       <section class="product-strip canvas-section" aria-label="产品预览" data-od-id="product-preview">
@@ -194,22 +222,44 @@
         </div>
       </section>
 
+      <section id="learn" class="section-block beginner-board" aria-label="小白每日知识" data-od-id="beginner-lessons">
+        <div class="section-title section-title--split">
+          <div>
+            <p class="hand-label">learn one thing daily</p>
+            <h2>小白每日一课</h2>
+          </div>
+          <p>每天补三张大白话知识卡，先弄懂概念，再看基金和预测。</p>
+        </div>
+        <div id="beginnerLessons" class="lesson-grid"></div>
+      </section>
+
       <section id="knowledge" class="section-block knowledge-board" aria-label="投资知识地图" data-od-id="knowledge-system">
         <div class="section-title section-title--split">
           <div>
             <p class="hand-label">playground</p>
-            <h2>KNOWLEDGE SYSTEM</h2>
+            <h2>投资知识地图</h2>
           </div>
           <p>每张卡只保留原则和检查点，避免把复杂决策伪装成简单答案。</p>
         </div>
         <div id="knowledgeMap" class="knowledge-grid"></div>
       </section>
 
+      <section id="guru" class="section-block guru-board" aria-label="大佬公开持仓观察" data-od-id="guru-portfolios">
+        <div class="section-title section-title--split">
+          <div>
+            <p class="hand-label">public filings, not copy trading</p>
+            <h2>大佬公开持仓观察</h2>
+          </div>
+          <p id="guruPortfolioNote">公开持仓只用于学习，不代表实时买卖。</p>
+        </div>
+        <div id="guruPortfolioGrid" class="guru-grid"></div>
+      </section>
+
       <section class="section-block playbook-board" aria-label="社区和产品方案" data-od-id="community-playbooks">
         <div class="section-title section-title--split">
           <div>
             <p class="hand-label">research notes</p>
-            <h2>COMMUNITY PLAYBOOKS</h2>
+            <h2>社区与产品套路</h2>
           </div>
           <p>社区热度只作为发现层，事实必须回到官方、披露和可信新闻源。</p>
         </div>
@@ -220,7 +270,7 @@
         <div class="contact-card">
           <div class="section-title">
             <p class="hand-label">let's publish</p>
-            <h2>DAILY UPDATE LOOP</h2>
+            <h2>每日更新机制</h2>
             <p>自动采集只解决速度，最终质量来自来源分层、诊断和复盘。</p>
           </div>
           <div class="publishing-grid">
@@ -238,7 +288,7 @@
     </main>
 
     <footer class="site-footer">
-      <p>本页面仅用于公开信息整理、教育和研究，不构成法律、税务、投资或财务建议。任何组合调整都应结合个人目标、期限、现金流、税务和风险承受能力，并咨询持牌专业人士。</p>
+      <p>本页面仅用于公开信息整理、教育和研究，不构成法律、税务、投资或财务建议。页面里的基金代码、预测和公开持仓仅作学习观察，不代表适合你购买。任何组合调整都应结合个人目标、期限、现金流、税务和风险承受能力，并咨询持牌专业人士。</p>
     </footer>
 
     <script src="app.js?v=20260603-interaction-audit-5" type="module"></script>

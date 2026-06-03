@@ -1188,6 +1188,219 @@ canvas {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.forecast-board,
+.beginner-board {
+  background: color-mix(in srgb, var(--blue) 10%, var(--bg));
+}
+
+.fund-board {
+  background: color-mix(in srgb, var(--yellow) 14%, var(--bg));
+}
+
+.guru-board {
+  background: color-mix(in srgb, var(--mint) 12%, var(--bg));
+}
+
+.forecast-grid,
+.lesson-grid,
+.guru-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.fund-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.forecast-card,
+.fund-card,
+.lesson-card,
+.guru-card {
+  background: var(--surface);
+  border: 2px solid var(--black);
+  box-shadow: var(--shadow-hard);
+  min-width: 0;
+  padding: 24px;
+}
+
+.forecast-card:nth-child(3n + 1),
+.lesson-card:nth-child(3n + 2),
+.guru-card:nth-child(3n + 1) {
+  transform: rotate(-1deg);
+}
+
+.forecast-card:nth-child(3n + 2),
+.lesson-card:nth-child(3n + 1),
+.guru-card:nth-child(3n + 2) {
+  transform: rotate(1deg);
+}
+
+.forecast-card h3,
+.fund-card h3,
+.lesson-card h3,
+.guru-card h3 {
+  font-family: var(--font-sans);
+  font-size: 25px;
+  line-height: 1.16;
+  margin: 0 0 14px;
+}
+
+.forecast-card p,
+.fund-card p,
+.lesson-card p,
+.guru-card p {
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.forecast-card ul {
+  display: grid;
+  gap: 9px;
+  margin: 18px 0 0;
+  padding-left: 18px;
+}
+
+.forecast-card li {
+  color: var(--ink-soft);
+}
+
+.novice-note,
+.advice-boundary {
+  background: var(--black);
+  color: var(--white);
+  font-weight: 800;
+}
+
+.novice-note {
+  margin-top: 18px;
+  padding: 14px;
+}
+
+.advice-boundary {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  margin: 0 0 22px;
+  padding: 18px 22px;
+}
+
+.advice-boundary strong {
+  color: var(--yellow);
+  flex: 0 0 auto;
+}
+
+.fund-card__top,
+.guru-card__head {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.fund-card .badge {
+  max-width: 48%;
+  text-align: right;
+  white-space: normal;
+}
+
+.fund-card dl {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0 0;
+}
+
+.fund-card dl div {
+  border-left: 4px solid var(--black);
+  padding-left: 12px;
+}
+
+.fund-card dt {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.fund-card dd {
+  color: var(--ink-soft);
+  margin: 4px 0 0;
+}
+
+.lesson-index {
+  background: var(--blue);
+  border: 2px solid var(--black);
+  display: inline-flex;
+  font-weight: 900;
+  margin-bottom: 16px;
+  padding: 6px 12px;
+}
+
+.lesson-card div {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 6px;
+  margin-top: 16px;
+  padding-top: 14px;
+}
+
+.lesson-card strong {
+  font-size: 13px;
+}
+
+.lesson-card span {
+  color: var(--ink-soft);
+}
+
+.guru-meta {
+  color: var(--muted) !important;
+  font-size: 13px;
+  margin-top: 10px !important;
+}
+
+.guru-card ol {
+  counter-reset: holdings;
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+}
+
+.guru-card li {
+  align-items: center;
+  border: 1px solid var(--line);
+  counter-increment: holdings;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-height: 44px;
+  padding: 10px 12px;
+}
+
+.guru-card li::before {
+  color: var(--muted);
+  content: counter(holdings, decimal-leading-zero);
+  font-size: 11px;
+  font-weight: 900;
+  grid-column: 1 / -1;
+}
+
+.guru-card li span {
+  font-weight: 800;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.guru-card li strong {
+  color: var(--green);
+  font-size: 13px;
+}
+
 .contact-board {
   padding-bottom: 80px;
 }
@@ -1465,14 +1678,36 @@ canvas {
 
   .summary-grid,
   .knowledge-grid,
-  .playbook-grid {
+  .playbook-grid,
+  .forecast-grid,
+  .fund-grid,
+  .lesson-grid,
+  .guru-grid {
     grid-template-columns: 1fr;
   }
 
   .tilt-card,
   .tilt-card--reverse,
-  .knowledge-card:nth-child(n) {
+  .knowledge-card:nth-child(n),
+  .forecast-card:nth-child(n),
+  .lesson-card:nth-child(n),
+  .guru-card:nth-child(n) {
     transform: none;
+  }
+
+  .advice-boundary {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .fund-card__top,
+  .guru-card__head {
+    flex-direction: column;
+  }
+
+  .fund-card .badge {
+    max-width: 100%;
+    text-align: left;
   }
 
   .product-strip {

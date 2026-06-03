@@ -45,6 +45,110 @@ const stooqSymbols = [
   { symbol: "gld.us", label: "GLD", shortLabel: "GLD" }
 ];
 
+const beginnerLessonBank = [
+  {
+    title: "基金不是稳赚账户",
+    plain: "基金是把很多人的钱交给一个产品去买股票、债券、现金工具或其它资产。它会涨也会跌，风险来自底层资产。",
+    example: "股票基金像一篮子股票，债券基金像一篮子债券，货币基金更接近现金管理工具。",
+    todayCheck: "买之前先问：这只基金主要买什么？最差可能跌多少？我多久不用这笔钱？"
+  },
+  {
+    title: "新手先分清三笔钱",
+    plain: "短期要用的钱不应该放进高波动资产；长期不用的钱才适合承受股票基金波动。",
+    example: "房租、生活费和 3-12 个月应急金先放现金桶；5 年以上长期资金再考虑权益基金。",
+    todayCheck: "先写下：我这笔钱什么时候要用？如果亏 20% 会不会影响生活？"
+  },
+  {
+    title: "宽基基金适合做核心仓",
+    plain: "宽基基金买的是一整个市场或一大批公司，不押单一公司，适合新手做长期学习对象。",
+    example: "常见代表包括跟踪美国大盘的 VOO/SPY、全市场的 VTI、全球股票的 VT。",
+    todayCheck: "先比较费用率、跟踪指数、持仓分散度，不要只看最近涨幅。"
+  },
+  {
+    title: "债券基金也会亏",
+    plain: "债券基金不是存款。利率上升时，长久期债券基金价格可能下跌。",
+    example: "短债通常波动较低，长债对利率更敏感；TLT 这类长债 ETF 波动可能很大。",
+    todayCheck: "看到债券基金前，先看久期、信用质量和你是否能承受净值波动。"
+  },
+  {
+    title: "定投解决不了所有问题",
+    plain: "定投可以降低择时压力，但如果买错资产、仓位过大或期限太短，仍然可能亏钱。",
+    example: "长期宽基定投和短线追热点基金不是一回事。",
+    todayCheck: "定投前先设上限：每月多少钱、投多久、什么条件下停止复盘。"
+  },
+  {
+    title: "费用率会慢慢吃掉收益",
+    plain: "同样跟踪一个指数，费用越低，长期留下来的收益通常越多。",
+    example: "指数基金常见费用率差异看起来只有零点几，但十年二十年会拉开差距。",
+    todayCheck: "同类基金先比较费用率、规模、流动性、跟踪误差。"
+  },
+  {
+    title: "不要跟着别人实盘无脑买",
+    plain: "大佬持仓通常披露滞后，而且他们的资金量、风险承受力、税务和期限都与你不同。",
+    example: "13F 持仓常常晚几十天才公开，看到时对方可能已经调整。",
+    todayCheck: "看大佬持仓只问：这个方向说明了什么？能不能用宽基或低风险方式表达？"
+  }
+];
+
+const fundWatchlistTemplates = [
+  {
+    bucket: "现金/短债桶",
+    examples: ["SGOV", "BIL", "SHV"],
+    role: "放短期要用的钱和等待机会的现金，不追求高收益。",
+    suitableFor: "3-12 个月内可能要用的钱、应急金、暂时不想承受股票波动的资金。",
+    buyGuidance: "新手先把现金桶补足，再考虑风险资产；关注收益率会随利率下降而回落。",
+    risk: "不是银行存款；仍有利率、流动性和再投资风险。"
+  },
+  {
+    bucket: "美国宽基股票",
+    examples: ["VOO", "VTI", "SPY"],
+    role: "作为长期权益核心仓的学习样例，用一篮子公司分散单票风险。",
+    suitableFor: "5 年以上不用、能承受大幅回撤的长期资金。",
+    buyGuidance: "更适合分批或定投观察，不适合用短期生活费一次性冲进去。",
+    risk: "熊市可能出现 20%-50% 级别回撤，短期不保证赚钱。"
+  },
+  {
+    bucket: "全球股票分散",
+    examples: ["VT", "VXUS", "ACWI"],
+    role: "避免只押单一国家市场，把美国以外资产纳入观察。",
+    suitableFor: "想降低单一市场依赖、接受汇率和地区差异的新手。",
+    buyGuidance: "可作为宽基组合的分散工具，先看与已有持仓是否重复。",
+    risk: "汇率、地区政策、估值周期都会影响表现。"
+  },
+  {
+    bucket: "综合债券",
+    examples: ["BND", "AGG", "IEF"],
+    role: "降低组合波动，提供利息和再平衡来源。",
+    suitableFor: "不想全仓股票、需要组合稳定性的投资者。",
+    buyGuidance: "利率仍高时优先看久期；不理解久期前别重仓长债。",
+    risk: "利率上升会压低债券基金净值，信用风险也会影响价格。"
+  },
+  {
+    bucket: "黄金/抗通胀观察",
+    examples: ["GLD", "IAU", "SGOL"],
+    role: "用于观察避险、美元和实际利率变化，不产生现金流。",
+    suitableFor: "想学习分散风险，但能接受黄金长期横盘的新手。",
+    buyGuidance: "更适合作为小比例观察仓，不适合作为全部资产配置。",
+    risk: "价格波动大，不保证抗跌，也没有股息或利息。"
+  },
+  {
+    bucket: "高波动卫星",
+    examples: ["QQQ", "ARKK", "BTC/ETH 相关产品"],
+    role: "用于学习成长、科技和高波动资产的风险，不适合作为新手核心仓。",
+    suitableFor: "已经有现金桶和核心宽基，只拿少量资金做学习的人。",
+    buyGuidance: "先设仓位上限和止错条件，别因为社交平台热度追高。",
+    risk: "回撤可能很深，主题基金和加密相关资产可能长期跑输宽基。"
+  }
+];
+
+const guruManagers = [
+  { name: "Berkshire Hathaway / Warren Buffett", cik: "0001067983", lesson: "集中在少数高质量公司，现金和安全边际很重要。" },
+  { name: "Bridgewater Associates / Ray Dalio", cik: "0001350694", lesson: "从宏观环境和风险分散角度观察资产。" },
+  { name: "Pershing Square / Bill Ackman", cik: "0001336528", lesson: "集中持仓，重视商业质量和催化因素。" },
+  { name: "Duquesne Family Office / Stanley Druckenmiller", cik: "0001536411", lesson: "更偏宏观和机会型，仓位变化可能很快。" },
+  { name: "Appaloosa / David Tepper", cik: "0001656456", lesson: "关注周期、赔率和风险资产再定价。" }
+];
+
 async function fetchText(url, timeoutMs = 12000) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
@@ -60,6 +164,10 @@ async function fetchText(url, timeoutMs = 12000) {
   } finally {
     clearTimeout(timeout);
   }
+}
+
+function wait(ms) {
+  return new Promise((resolveWait) => setTimeout(resolveWait, ms));
 }
 
 function stripTags(value) {
@@ -78,7 +186,9 @@ function stripTags(value) {
 }
 
 function xmlValue(block, tag) {
-  const match = block.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`, "i"));
+  const escaped = tag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const tagPattern = tag.includes(":") ? escaped : `(?:[\\w-]+:)?${escaped}`;
+  const match = block.match(new RegExp(`<${tagPattern}[^>]*>([\\s\\S]*?)<\\/${tagPattern}>`, "i"));
   return match ? stripTags(match[1]) : "";
 }
 
@@ -226,6 +336,178 @@ async function fetchCrypto() {
   }));
 }
 
+function dayOfYear(date = new Date()) {
+  const start = Date.UTC(date.getUTCFullYear(), 0, 0);
+  const now = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
+  return Math.floor((now - start) / 86400000);
+}
+
+function buildBeginnerLessons(date = new Date()) {
+  const start = dayOfYear(date) % beginnerLessonBank.length;
+  return [0, 1, 2].map((offset) => beginnerLessonBank[(start + offset) % beginnerLessonBank.length]);
+}
+
+function buildForecasts(markets, scenarios, calendar) {
+  const tenYear = Number(markets.find((item) => item.shortLabel === "10Y")?.value);
+  const cpi = Number(markets.find((item) => item.shortLabel === "CPI")?.value);
+  const btcScore = Number(markets.find((item) => item.shortLabel === "BTC")?.score);
+  const ratesElevated = Number.isFinite(tenYear) && tenYear >= 4.25;
+  const inflationElevated = Number.isFinite(cpi) && cpi > 3;
+  const cryptoWeak = Number.isFinite(btcScore) && btcScore < 40;
+  const nextEvent = calendar[0];
+  const mainScenario = scenarios[0];
+
+  return {
+    tomorrow: {
+      title: "明日预测",
+      direction: ratesElevated || inflationElevated ? "偏防守，先等关键数据确认" : "中性观察，风险资产有修复空间",
+      confidence: "中等偏低",
+      thesis: ratesElevated
+        ? "长端利率仍偏高，市场更容易对通胀、就业和 Fed 口径敏感。明日不适合只看涨跌，重点看收益率是否继续上行。"
+        : "利率压力若缓和，宽基资产可能获得情绪修复，但仍需要通胀和就业数据配合。",
+      watch: [
+        nextEvent ? `${nextEvent.date}：${nextEvent.event}` : "等待下一项宏观数据",
+        Number.isFinite(tenYear) ? `10 年期美债是否继续高于 ${tenYear.toFixed(2)}% 附近` : "10 年期美债方向",
+        cryptoWeak ? "BTC/ETH 偏弱，说明高波动风险偏好不足" : "高波动资产是否能企稳"
+      ],
+      noviceMove: "新手明日重点做观察和记录，不因为一天行情改变长期仓位。"
+    },
+    week: {
+      title: "本周预测",
+      direction: mainScenario?.name || "以利率、通胀和就业为主线",
+      confidence: "中等",
+      thesis: mainScenario?.path || "本周仍以宏观数据、政策预期和风险偏好变化为主线。",
+      watch: [
+        "就业、CPI、PCE 和 Fed 口径是否支持降息预期",
+        "股票宽基与长债是否同向承压，判断市场是在交易利率还是盈利",
+        "新闻热点是否能回到官方数据和披露文件验证"
+      ],
+      noviceMove: "本周适合复核自己的现金桶、核心宽基和债券比例；不要为了追热点临时重仓主题基金。"
+    },
+    bigPicture: {
+      title: "大方向",
+      direction: "现金流安全垫优先，核心仓看宽基，卫星仓小比例学习",
+      thesis: "对小白来说，最重要的不是猜中明天涨跌，而是先搭好不会被波动打乱生活的组合结构。",
+      watch: [
+        "3-12 个月现金桶是否已经独立出来",
+        "核心仓是否足够分散、费用是否低",
+        "任何单一基金或主题是否超过自己能承受的仓位上限"
+      ],
+      noviceMove: "没有投资计划书之前，先不做大额一次性买入。"
+    }
+  };
+}
+
+function buildFundWatchlist(markets) {
+  const tenYear = Number(markets.find((item) => item.shortLabel === "10Y")?.value);
+  const rateNote = Number.isFinite(tenYear)
+    ? `当前 10 年期美债约 ${tenYear.toFixed(2)}%，债券和成长资产都要看利率变化。`
+    : "利率数据待更新，先按长期资产配置原则观察。";
+
+  return fundWatchlistTemplates.map((item) => ({
+    ...item,
+    currentRead: item.bucket.includes("债券") || item.bucket.includes("现金")
+      ? rateNote
+      : "这不是买入指令，只是帮助新手理解不同基金在组合里的角色。"
+  }));
+}
+
+function parseInfoTable(xml) {
+  const holdings = [...xml.matchAll(/<(?:[\w-]+:)?infoTable\b[\s\S]*?<\/(?:[\w-]+:)?infoTable>/gi)].map((match) => {
+    const block = match[0];
+    const issuer = xmlValue(block, "nameOfIssuer");
+    const value = Number(xmlValue(block, "value"));
+    const shares = Number(xmlValue(block, "sshPrnamt"));
+    const impliedPrice = Number.isFinite(value) && Number.isFinite(shares) && shares > 0 ? value / shares : null;
+    const valueUsd = impliedPrice !== null && impliedPrice > 0 && impliedPrice < 1 ? value * 1000 : value;
+    return {
+      issuer,
+      value: Number.isFinite(valueUsd) ? valueUsd : 0,
+      shares: Number.isFinite(shares) ? shares : 0
+    };
+  }).filter((item) => item.issuer && item.value > 0);
+
+  const grouped = new Map();
+  holdings.forEach((item) => {
+    const key = item.issuer.replace(/\s+/g, " ").trim().toUpperCase();
+    const current = grouped.get(key) || { issuer: item.issuer, value: 0, shares: 0 };
+    current.value += item.value;
+    current.shares += item.shares;
+    grouped.set(key, current);
+  });
+
+  return [...grouped.values()]
+    .sort((a, b) => b.value - a.value)
+    .slice(0, 5)
+    .map((item) => ({
+      issuer: item.issuer,
+      valueMillions: Math.round(item.value / 10000) / 100,
+      shares: item.shares
+    }));
+}
+
+async function fetchLatest13F(manager) {
+  const submissionsUrl = `https://data.sec.gov/submissions/CIK${manager.cik}.json`;
+  const submissions = JSON.parse(await fetchText(submissionsUrl, 15000));
+  const filings = submissions.filings?.recent || {};
+  const index = ensureIndex(filings.form || [], (form) => String(form).includes("13F-HR"));
+  if (index === -1) throw new Error("No recent 13F-HR filing");
+
+  const accession = filings.accessionNumber[index];
+  const accessionNoDash = accession.replace(/-/g, "");
+  const cikNoZero = String(Number(manager.cik));
+  const archiveBase = `https://www.sec.gov/Archives/edgar/data/${cikNoZero}/${accessionNoDash}`;
+  const filingIndex = JSON.parse(await fetchText(`${archiveBase}/index.json`, 15000));
+  const items = filingIndex.directory?.item || [];
+  const xmlCandidates = [
+    ...items.filter((item) => item.name?.endsWith(".xml") && !item.name.includes("primary_doc")),
+    ...items.filter((item) => item.name?.endsWith(".xml") && item.name.includes("primary_doc"))
+  ];
+
+  let topHoldings = [];
+  for (const item of xmlCandidates) {
+    const xml = await fetchText(`${archiveBase}/${item.name}`, 15000);
+    if (!/infoTable/i.test(xml)) continue;
+    topHoldings = parseInfoTable(xml);
+    if (topHoldings.length) break;
+  }
+
+  if (!topHoldings.length) throw new Error("No information table parsed");
+  return {
+    name: manager.name,
+    lesson: manager.lesson,
+    filingDate: filings.filingDate[index],
+    reportDate: filings.reportDate[index],
+    sourceUrl: `https://www.sec.gov/Archives/edgar/data/${cikNoZero}/${accessionNoDash}`,
+    topHoldings
+  };
+}
+
+function ensureIndex(list, predicate) {
+  for (let index = 0; index < list.length; index += 1) {
+    if (predicate(list[index], index)) return index;
+  }
+  return -1;
+}
+
+async function fetchGuruPortfolios(existingManagers = []) {
+  const managers = [];
+  for (const manager of guruManagers) {
+    try {
+      managers.push(await fetchLatest13F(manager));
+      await wait(180);
+    } catch (error) {
+      const fallback = existingManagers.find((item) => item.name === manager.name);
+      if (fallback) managers.push(fallback);
+    }
+  }
+  return {
+    label: "SEC 13F 公开持仓观察",
+    note: "以下不是实时实盘，通常有季度报告期和披露滞后；只能用于学习大资金方向，不能照抄买入。",
+    managers
+  };
+}
+
 function buildScenarios(markets, news) {
   const tenYear = markets.find((item) => item.shortLabel === "10Y")?.value;
   const crypto = markets.find((item) => item.shortLabel === "BTC")?.score;
@@ -344,6 +626,14 @@ async function collectUpdates(existing) {
   const mergedMarkets = markets.length ? [...markets, ...preservedMarkets] : existing.markets;
   const mergedNews = news.length ? mergeNews(news, existing.news) : existing.news;
   const scenarios = buildScenarios(mergedMarkets, mergedNews);
+  const beginnerLessons = buildBeginnerLessons();
+  const forecasts = buildForecasts(mergedMarkets, scenarios, existing.calendar || []);
+  const fundWatchlist = buildFundWatchlist(mergedMarkets);
+  const guruPortfolios = await fetchGuruPortfolios(existing.guruPortfolios?.managers || []);
+  diagnostics.push({
+    source: "SEC 13F public holdings",
+    status: guruPortfolios.managers.length ? "ok" : "failed (No public holdings parsed)"
+  });
 
   return {
     ...existing,
@@ -362,6 +652,10 @@ async function collectUpdates(existing) {
     markets: mergedMarkets,
     news: mergedNews,
     scenarios,
+    beginnerLessons,
+    forecasts,
+    fundWatchlist,
+    guruPortfolios,
     updateDiagnostics: diagnostics
   };
 }
