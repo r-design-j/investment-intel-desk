@@ -164,8 +164,8 @@ p {
   font-weight: 900;
   gap: 10px;
   justify-content: center;
-  min-width: 112px;
-  padding: 0 16px;
+  min-width: 98px;
+  padding: 0 12px;
   text-transform: uppercase;
   transition: background 140ms ease, transform 140ms ease;
 }
@@ -694,6 +694,7 @@ main > section {
 .summary-grid,
 .dashboard-grid,
 .two-column,
+.platform-layout,
 .publishing-grid {
   display: grid;
   gap: 22px;
@@ -1197,6 +1198,10 @@ canvas {
   background: color-mix(in srgb, var(--yellow) 14%, var(--bg));
 }
 
+.platform-board {
+  background: color-mix(in srgb, var(--mint) 14%, var(--bg));
+}
+
 .guru-board {
   background: color-mix(in srgb, var(--mint) 12%, var(--bg));
 }
@@ -1395,6 +1400,129 @@ canvas {
   display: grid;
   gap: 18px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.platform-layout {
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+}
+
+.platform-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.platform-card,
+.china-live-card,
+.read-path article {
+  background: var(--surface);
+  border: 2px solid var(--black);
+  box-shadow: var(--shadow-hard);
+  min-width: 0;
+}
+
+.platform-card {
+  padding: 20px;
+}
+
+.platform-card__top,
+.china-live-card__head {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.platform-card h3,
+.china-live-card h3,
+.read-path h3 {
+  font-family: var(--font-sans);
+  font-size: 23px;
+  line-height: 1.14;
+  margin: 10px 0 0;
+}
+
+.platform-card p,
+.china-live-card p,
+.read-path p,
+.section-note {
+  color: var(--ink-soft);
+}
+
+.platform-card dl {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 0;
+}
+
+.platform-card dl div {
+  border-left: 4px solid var(--black);
+  padding-left: 12px;
+}
+
+.platform-card dt {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.platform-card dd {
+  margin: 4px 0 0;
+}
+
+.china-live-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.china-live-card {
+  padding: 18px;
+}
+
+.china-live-card ul {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.china-live-card li {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 5px;
+  padding-top: 10px;
+}
+
+.china-live-card li strong {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.china-live-card li span {
+  color: var(--ink-soft);
+}
+
+.read-path {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 22px;
+}
+
+.read-path article {
+  padding: 22px;
+}
+
+.read-path span {
+  background: var(--yellow);
+  border: 2px solid var(--black);
+  display: inline-flex;
+  font-weight: 900;
+  margin-bottom: 16px;
+  padding: 6px 10px;
 }
 
 .forecast-card,
@@ -1701,6 +1829,7 @@ canvas {
   .dashboard-grid,
   .two-column,
   .publishing-grid,
+  .platform-layout,
   .ashare-layout {
     grid-template-columns: 1fr;
   }
@@ -1867,6 +1996,8 @@ canvas {
   .fund-grid,
   .lesson-grid,
   .guru-grid,
+  .platform-grid,
+  .read-path,
   .china-market-grid,
   .china-fund-grid {
     grid-template-columns: 1fr;
@@ -1887,7 +2018,9 @@ canvas {
   }
 
   .fund-card__top,
+  .platform-card__top,
   .guru-card__head,
+  .china-live-card__head,
   .china-fund-card__head {
     flex-direction: column;
   }

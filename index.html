@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260603-ashare-1">
+    <link rel="stylesheet" href="styles.css?v=20260603-cn-2">
   </head>
   <body>
     <header class="site-header">
@@ -18,9 +18,10 @@
       <nav class="primary-nav" aria-label="页面导航">
         <a class="nav-link is-active" href="#top"><span class="nav-icon nav-icon--home" aria-hidden="true"></span>首页</a>
         <a class="nav-link" href="#brief"><span class="nav-icon nav-icon--about" aria-hidden="true"></span>今天</a>
-        <a class="nav-link" href="#forecast"><span class="nav-icon nav-icon--case" aria-hidden="true"></span>预测</a>
         <a class="nav-link" href="#ashare"><span class="nav-icon nav-icon--home" aria-hidden="true"></span>大A</a>
+        <a class="nav-link" href="#forecast"><span class="nav-icon nav-icon--case" aria-hidden="true"></span>预测</a>
         <a class="nav-link" href="#funds"><span class="nav-icon nav-icon--play" aria-hidden="true"></span>基金</a>
+        <a class="nav-link" href="#platforms"><span class="nav-icon nav-icon--about" aria-hidden="true"></span>平台</a>
         <a class="nav-link" href="#learn"><span class="nav-icon nav-icon--about" aria-hidden="true"></span>小白</a>
         <a class="nav-link" href="#news"><span class="nav-icon nav-icon--case" aria-hidden="true"></span>新闻</a>
       </nav>
@@ -44,19 +45,19 @@
         <div class="avatar-chip avatar-chip--right" aria-hidden="true">AI</div>
 
         <div class="hero-stage">
-          <div class="scribble-label">public signal room</div>
-          <div class="sticker sticker--mint">Currently reading Treasury / Fed / SEC</div>
-          <div class="sticker sticker--paper">Previously: raw market noise</div>
+          <div class="scribble-label">china-first signal room</div>
+          <div class="sticker sticker--mint">Currently reading A-share / funds / platforms</div>
+          <div class="sticker sticker--paper">Overseas data = external variable</div>
           <div class="selection-frame" aria-hidden="true">
             <i></i><i></i><i></i><i></i>
           </div>
-          <h1>每日投资情报<br>工作台</h1>
+          <h1>国内投资情报<br>工作台</h1>
           <div class="availability"><i></i><span>DAILY PUBLIC MARKET BRIEF</span></div>
           <p id="briefText" class="hero-summary">正在载入公开市场数据和每日研究快照。</p>
           <div id="briefTags" class="tag-row"></div>
           <div class="hero-actions">
-            <a class="primary-button" href="#forecast"><span aria-hidden="true">↗</span> 看明日/本周预测</a>
-            <a class="secondary-button" href="#funds">看基金观察池</a>
+            <a class="primary-button" href="#ashare"><span aria-hidden="true">↗</span> 先看大A</a>
+            <a class="secondary-button" href="#platforms">看国内平台/实盘</a>
           </div>
         </div>
 
@@ -70,11 +71,11 @@
           <strong id="confidenceBadge">置信度</strong>
         </div>
         <div>
-          <span class="strip-label">Sources Online</span>
+          <span class="strip-label">Domestic Sources</span>
           <strong id="sourcesOnline">核验中</strong>
         </div>
         <div>
-          <span class="strip-label">Next Event</span>
+          <span class="strip-label">External Event</span>
           <strong id="nextEvent">宏观日历</strong>
         </div>
         <div>
@@ -101,17 +102,6 @@
             <ul id="guardrails" class="clean-list"></ul>
           </article>
         </div>
-      </section>
-
-      <section id="forecast" class="section-block forecast-board" aria-label="明日与本周预测" data-od-id="forecast-system">
-        <div class="section-title section-title--split">
-          <div>
-            <p class="hand-label">tomorrow and this week</p>
-            <h2>明日预测 / 本周预测</h2>
-          </div>
-          <p>预测只给方向、关键变量和新手动作边界，不做个性化买卖指令。</p>
-        </div>
-        <div id="forecastGrid" class="forecast-grid"></div>
       </section>
 
       <section id="ashare" class="section-block ashare-board" aria-label="大 A 市场观察" data-od-id="a-share-desk">
@@ -146,6 +136,17 @@
         <div id="chinaFundGrid" class="china-fund-grid"></div>
       </section>
 
+      <section id="forecast" class="section-block forecast-board" aria-label="明日与本周预测" data-od-id="forecast-system">
+        <div class="section-title section-title--split">
+          <div>
+            <p class="hand-label">tomorrow and this week</p>
+            <h2>明日预测 / 本周预测</h2>
+          </div>
+          <p>先讲中国市场的大方向，再把美股、利率、美元当外部变量；所有基金例子都不是个性化买卖指令。</p>
+        </div>
+        <div id="forecastGrid" class="forecast-grid"></div>
+      </section>
+
       <section id="funds" class="section-block fund-board" aria-label="基金观察池" data-od-id="fund-watchlist">
         <div class="section-title section-title--split">
           <div>
@@ -161,57 +162,63 @@
         <div id="fundWatchlist" class="fund-grid"></div>
       </section>
 
-      <section class="product-strip canvas-section" aria-label="产品预览" data-od-id="product-preview">
-        <div class="product-shell">
-          <div class="product-bar">
-            <div class="window-dots" aria-hidden="true">
-              <span></span><span></span><span></span>
-            </div>
-            <strong>Daily Signal Room</strong>
-            <em>Public sources</em>
+      <section id="platforms" class="section-block platform-board" aria-label="国内平台与公开实盘" data-od-id="domestic-platforms">
+        <div class="section-title section-title--split">
+          <div>
+            <p class="hand-label">china platforms and public portfolios</p>
+            <h2>国内平台与实盘观察</h2>
           </div>
-          <div class="product-layout">
-            <nav class="product-sidebar" aria-label="预览导航">
-              <span class="is-active">Pulse</span>
-              <span>News</span>
-              <span>Risk</span>
-              <span>Sources</span>
-            </nav>
-            <div class="product-main">
-              <div class="desk-toolbar">
-                <p class="mono-label">Scenario model</p>
-                <div id="riskBadge" class="signal-badge">Risk review</div>
-              </div>
-              <div class="desk-focus">
-                <h2 id="briefTitle">今日情报摘要</h2>
-                <p>公开数据、新闻影响路径和风控边界合并成一张每日工作台。</p>
-              </div>
-              <div id="heroSignalStack" class="signal-stack"></div>
+          <p>平台负责发现线索，大佬实盘负责学习方法，最终买卖仍要回到自己的风险承受力和官方披露。</p>
+        </div>
+        <div class="platform-layout">
+          <article class="project-card project-card--wide">
+            <div class="project-meta">
+              <span>platforms</span>
+              <span>国内优先</span>
             </div>
-            <aside class="product-aside" aria-label="来源状态">
-              <p class="mono-label">Source status</p>
-              <div id="heroSourceStatus" class="status-stack"></div>
-              <div class="next-check">
-                <span>Next check</span>
-                <strong id="heroNextEvent">等待日历</strong>
-              </div>
-            </aside>
-          </div>
+            <div id="domesticPlatformGrid" class="platform-grid"></div>
+          </article>
+          <article class="project-card project-card--side">
+            <div class="project-meta">
+              <span>public portfolios</span>
+              <span>不跟单</span>
+            </div>
+            <h3>中国实盘/公开组合</h3>
+            <p id="chinaLiveNote" class="section-note">公开组合和文章只用于学习，不代表实时买卖。</p>
+            <div id="chinaLiveGrid" class="china-live-grid"></div>
+          </article>
+        </div>
+        <div class="read-path">
+          <article>
+            <span>01</span>
+            <h3>先看大A</h3>
+            <p>指数、成交额和风格轮动决定今天的温度。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>再看基金</h3>
+            <p>宽基、红利、成长、主动基金分开看，不混成一个“能不能买”。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>最后看社区</h3>
+            <p>雪球、同花顺、支付宝等平台只做线索入口，不替代事实核验。</p>
+          </article>
         </div>
       </section>
 
       <section id="pulse" class="section-block featured-board" aria-label="市场信号" data-od-id="market-pulse">
         <div class="section-title section-title--split">
           <div>
-            <p class="hand-label">explore today's work!</p>
-            <h2>FEATURED SIGNALS</h2>
+            <p class="hand-label">external variables</p>
+            <h2>海外与宏观外部变量</h2>
           </div>
-          <p>利率、通胀、政策和就业共同决定今日风险温度。</p>
+          <p>美债、通胀、政策和就业会影响全球风险偏好，但在本站里只是中国市场之外的辅助变量。</p>
         </div>
         <div class="dashboard-grid">
           <article class="project-card project-card--wide">
             <div class="project-meta">
-              <span>project 01</span>
+              <span>external 01</span>
               <span>Macro Pulse</span>
             </div>
             <div id="marketTiles" class="metric-grid"></div>
@@ -219,7 +226,7 @@
           </article>
           <article class="project-card project-card--side">
             <div class="project-meta">
-              <span>project 02</span>
+              <span>external 02</span>
               <span>Scenario Radar</span>
             </div>
             <h3>趋势预测</h3>
@@ -231,8 +238,8 @@
       <section id="news" class="section-block news-board" aria-label="新闻与日历" data-od-id="news-radar">
         <div class="section-title section-title--split">
           <div>
-            <p class="hand-label">case study</p>
-            <h2>NEWS RADAR</h2>
+            <p class="hand-label">facts and calendar</p>
+            <h2>新闻与宏观日历</h2>
           </div>
           <div id="newsFilters" class="filter-row" aria-label="新闻分类筛选"></div>
         </div>
@@ -277,13 +284,13 @@
         <div id="knowledgeMap" class="knowledge-grid"></div>
       </section>
 
-      <section id="guru" class="section-block guru-board" aria-label="大佬公开持仓观察" data-od-id="guru-portfolios">
+      <section id="guru" class="section-block guru-board" aria-label="海外 13F 外部参考" data-od-id="guru-portfolios">
         <div class="section-title section-title--split">
           <div>
-            <p class="hand-label">public filings, not copy trading</p>
-            <h2>大佬公开持仓观察</h2>
+            <p class="hand-label">overseas filing, secondary</p>
+            <h2>海外 13F 外部参考</h2>
           </div>
-          <p id="guruPortfolioNote">公开持仓只用于学习，不代表实时买卖。</p>
+          <p id="guruPortfolioNote">海外 13F 有季度披露滞后，只作为外部学习样本，不放在本站主线。</p>
         </div>
         <div id="guruPortfolioGrid" class="guru-grid"></div>
       </section>
@@ -292,31 +299,11 @@
         <div class="section-title section-title--split">
           <div>
             <p class="hand-label">research notes</p>
-            <h2>社区与产品套路</h2>
+            <h2>国内社区与产品套路</h2>
           </div>
-          <p>社区热度只作为发现层，事实必须回到官方、披露和可信新闻源。</p>
+          <p>国内平台热度只作为发现层，事实必须回到公告、基金季报、指数规则和可信新闻源。</p>
         </div>
         <div id="playbookGrid" class="playbook-grid"></div>
-      </section>
-
-      <section id="publishing" class="section-block contact-board" aria-label="每日更新与来源" data-od-id="publishing-loop">
-        <div class="contact-card">
-          <div class="section-title">
-            <p class="hand-label">let's publish</p>
-            <h2>每日更新机制</h2>
-            <p>自动采集只解决速度，最终质量来自来源分层、诊断和复盘。</p>
-          </div>
-          <div class="publishing-grid">
-            <article class="dark-panel">
-              <h3>每日更新机制</h3>
-              <ol id="publishingLoop" class="numbered-list"></ol>
-            </article>
-            <article class="dark-panel">
-              <h3>来源账本</h3>
-              <div id="sourceList" class="source-list"></div>
-            </article>
-          </div>
-        </div>
       </section>
     </main>
 
@@ -324,6 +311,6 @@
       <p>本页面仅用于公开信息整理、教育和研究，不构成法律、税务、投资或财务建议。页面里的基金代码、预测和公开持仓仅作学习观察，不代表适合你购买。任何组合调整都应结合个人目标、期限、现金流、税务和风险承受能力，并咨询持牌专业人士。</p>
     </footer>
 
-    <script src="app.js?v=20260603-ashare-1" type="module"></script>
+    <script src="app.js?v=20260603-cn-2" type="module"></script>
   </body>
 </html>

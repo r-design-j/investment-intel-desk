@@ -72,6 +72,8 @@ function createFallbackData(message = "daily.json 暂不可用") {
     chinaMarkets: [],
     chinaForecasts: {},
     chinaFunds: { funds: [] },
+    domesticPlatforms: [],
+    chinaLivePortfolios: { accounts: [] },
     guruPortfolios: { managers: [] },
     playbooks: [],
     publishingLoop: [],
@@ -103,6 +105,12 @@ function normalizeDailyData(data) {
       ...fallback.chinaFunds,
       ...(data?.chinaFunds || {}),
       funds: ensureArray(data?.chinaFunds?.funds)
+    },
+    domesticPlatforms: ensureArray(data?.domesticPlatforms),
+    chinaLivePortfolios: {
+      ...fallback.chinaLivePortfolios,
+      ...(data?.chinaLivePortfolios || {}),
+      accounts: ensureArray(data?.chinaLivePortfolios?.accounts)
     },
     guruPortfolios: {
       ...fallback.guruPortfolios,
@@ -147,16 +155,10 @@ async function loadDaily() {
 function render() {
   const data = state.data;
   el("#asOf").textContent = `As of ${data.asOf.display}`;
-  el("#riskBadge").textContent = data.risk.levelLabel;
-  el("#riskBadge").className = `signal-badge ${toneClass(data.risk.level)}`;
   el("#confidenceBadge").textContent = `置信度 ${data.brief.confidence}`;
   renderStripStatus(data);
-  el("#briefTitle").textContent = buildPreviewTitle(data);
   el("#briefText").textContent = data.brief.summary;
   renderTags("#briefTags", data.brief.tags);
-  renderHeroSignals(data.markets);
-  renderHeroStatus(data.updateDiagnostics);
-  renderHeroNextEvent(data.calendar);
   renderList("#actionList", data.actions);
   renderList("#guardrails", data.risk.guardrails);
   renderMarkets(data.markets);
@@ -166,6 +168,8 @@ function render() {
   renderChinaForecasts(data.chinaForecasts);
   renderChinaFunds(data.chinaFunds);
   renderFundWatchlist(data.fundWatchlist);
+  renderDomesticPlatforms(data.domesticPlatforms);
+  renderChinaLivePortfolios(data.chinaLivePortfolios);
   renderNewsFilters(data.news);
   renderNews(data.news);
   renderCalendar(data.calendar);
@@ -173,9 +177,6 @@ function render() {
   renderKnowledge(data.knowledge);
   renderGuruPortfolios(data.guruPortfolios);
   renderPlaybooks(data.playbooks);
-  renderPublishingLoop(data.publishingLoop);
-  renderSources(data.sources);
-  renderDiagnostics(data.updateDiagnostics || []);
   drawPulseChart(data.markets);
   scheduleHashSync();
   updateActiveNav();
@@ -195,10 +196,12 @@ function renderList(selector, items) {
 
 function renderStripStatus(data) {
   const diagnostics = ensureArray(data.updateDiagnostics);
-  const okCount = diagnostics.filter((item) => item.status === "ok").length;
-  const total = diagnostics.length || data.sources.length || 0;
+  const domesticDiagnostics = diagnostics.filter((item) => /Eastmoney|A-share|China/i.test(item.source || ""));
+  const visibleDiagnostics = domesticDiagnostics.length ? domesticDiagnostics : diagnostics;
+  const okCount = visibleDiagnostics.filter((item) => item.status === "ok").length;
+  const total = visibleDiagnostics.length || data.sources.length || 0;
   const next = ensureArray(data.calendar)[0];
-  el("#sourcesOnline").textContent = total ? `${okCount}/${total} 在线` : "待核验";
+  el("#sourcesOnline").textContent = total ? `${okCount}/${total} 国内源` : "待核验";
   el("#nextEvent").textContent = next ? next.event : "等待日历";
 }
 
@@ -381,6 +384,47 @@ function renderFundWatchlist(items) {
   `).join("") : `<div class="empty-state">等待基金观察池</div>`;
 }
 
+function renderDomesticPlatforms(items) {
+  const target = el("#domesticPlatformGrid");
+  if (!target) return;
+  target.innerHTML = items.length ? items.map((item) => `
+    <article class="platform-card">
+      <div class="platform-card__top">
+        <div>
+          <span class="lesson-index">${escapeHtml(item.type || "平台")}</span>
+          <h3><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.name)}</a></h3>
+        </div>
+        <span class="badge">${escapeHtml(item.priority || "国内")}</span>
+      </div>
+      <p>${escapeHtml(item.use)}</p>
+      <dl>
+        <div><dt>适合看什么</dt><dd>${escapeHtml(item.bestFor)}</dd></div>
+        <div><dt>别怎么用</dt><dd>${escapeHtml(item.caution)}</dd></div>
+      </dl>
+    </article>
+  `).join("") : `<div class="empty-state">等待国内平台目录</div>`;
+}
+
+function renderChinaLivePortfolios(portfolios) {
+  const target = el("#chinaLiveGrid");
+  if (!target) return;
+  const accounts = ensureArray(portfolios?.accounts);
+  el("#chinaLiveNote").textContent = portfolios?.note || "公开组合和文章只用于学习，不代表实时买卖。";
+  target.innerHTML = accounts.length ? accounts.map((item) => `
+    <article class="china-live-card">
+      <div class="china-live-card__head">
+        <h3><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.name)}</a></h3>
+        <span class="badge">${escapeHtml(item.platform)}</span>
+      </div>
+      <p>${escapeHtml(item.focus)}</p>
+      <ul>
+        <li><strong>学习点</strong><span>${escapeHtml(item.lesson)}</span></li>
+        <li><strong>边界</strong><span>${escapeHtml(item.caution)}</span></li>
+      </ul>
+    </article>
+  `).join("") : `<div class="empty-state">等待中国公开组合目录</div>`;
+}
+
 function renderNewsFilters(news) {
   const categories = ["All", ...new Set(news.map((item) => item.category).filter(Boolean))];
   if (!categories.includes(state.newsFilter)) state.newsFilter = "All";
@@ -474,11 +518,15 @@ function renderPlaybooks(playbooks) {
 }
 
 function renderPublishingLoop(items) {
-  el("#publishingLoop").innerHTML = items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+  const target = el("#publishingLoop");
+  if (!target) return;
+  target.innerHTML = items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
 }
 
 function renderSources(sources) {
-  el("#sourceList").innerHTML = sources.length ? sources.map((item) => `
+  const target = el("#sourceList");
+  if (!target) return;
+  target.innerHTML = sources.length ? sources.map((item) => `
     <article class="source-item">
       <h3><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.name)}</a></h3>
       <p>${escapeHtml(item.use)}</p>
@@ -487,6 +535,8 @@ function renderSources(sources) {
 }
 
 function renderDiagnostics(items) {
+  const target = el("#sourceList");
+  if (!target) return;
   if (!items.length) return;
   const okCount = items.filter((item) => item.status === "ok").length;
   const labelFor = (item) => {
@@ -495,7 +545,7 @@ function renderDiagnostics(items) {
     if (item.source.includes("CoinGecko")) return "加密行情源暂不可用，已跳过";
     return "暂不可用，保留最近快照";
   };
-  el("#sourceList").insertAdjacentHTML("beforeend", `
+  target.insertAdjacentHTML("beforeend", `
     <article class="source-item">
       <h3>最近更新诊断</h3>
       <p>公开源更新 ${okCount}/${items.length} 正常；失败源已降级，不会写入错误行情或改变合规边界。</p>
@@ -581,9 +631,8 @@ function drawPulseChart(markets) {
 
 function updateActiveNav() {
   if (!navTargets.length) return;
-  const hashTarget = navTargets.find((item) => item.hash === window.location.hash);
-  const headerOffset = getAnchorOffset() + 72;
-  const current = hashTarget || [...navTargets].reverse().find((item) => {
+  const headerOffset = Math.max(getAnchorOffset() + 130, window.innerHeight * 0.24);
+  const current = [...navTargets].reverse().find((item) => {
     const rect = item.target.getBoundingClientRect();
     return rect.top <= headerOffset;
   }) || navTargets[0];
@@ -608,7 +657,7 @@ function syncHashTargetPosition() {
   if (!hash || hash === "#top") return;
   const target = document.querySelector(hash);
   if (!target) return;
-  window.requestAnimationFrame(() => {
+  const alignTarget = () => {
     const topGap = getAnchorOffset();
     const targetTop = target.getBoundingClientRect().top;
     if (Math.abs(targetTop - topGap) < 32) {
@@ -619,8 +668,10 @@ function syncHashTargetPosition() {
       top: window.scrollY + targetTop - topGap,
       behavior: "auto"
     });
-    window.requestAnimationFrame(updateActiveNav);
-  });
+    window.setTimeout(updateActiveNav, 60);
+  };
+  alignTarget();
+  window.requestAnimationFrame(alignTarget);
 }
 
 function scheduleHashSync() {
