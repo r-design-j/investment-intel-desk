@@ -293,7 +293,7 @@ main {
 
 main,
 main > section {
-  scroll-margin-top: var(--anchor-offset);
+  scroll-margin-top: 0;
 }
 
 .hero {
@@ -1201,12 +1201,194 @@ canvas {
   background: color-mix(in srgb, var(--mint) 12%, var(--bg));
 }
 
+.ashare-board {
+  background: color-mix(in srgb, var(--pink) 7%, var(--bg));
+}
+
+.section-title--compact {
+  margin: 54px 0 24px;
+}
+
+.section-title--compact h2 {
+  font-size: 42px;
+}
+
 .forecast-grid,
 .lesson-grid,
 .guru-grid {
   display: grid;
   gap: 18px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ashare-layout {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+}
+
+.china-market-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.china-market-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  min-height: 142px;
+  padding: 16px;
+}
+
+.china-market-card__top {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.china-market-card h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.china-market-card__top span {
+  background: var(--surface-2);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+  padding: 5px 9px;
+}
+
+.china-market-card strong {
+  display: block;
+  font-size: 31px;
+  line-height: 1;
+  margin-top: 16px;
+}
+
+.china-market-card p {
+  color: var(--muted);
+  margin: 10px 0 0;
+}
+
+.china-market-card.is-up strong,
+.china-fund-card li strong {
+  color: var(--green);
+}
+
+.china-market-card.is-down strong {
+  color: var(--red);
+}
+
+.china-forecast-list {
+  display: grid;
+  gap: 14px;
+}
+
+.china-forecast-card {
+  background: color-mix(in srgb, var(--yellow) 20%, var(--surface));
+  border: 1px solid var(--line);
+  padding: 18px;
+}
+
+.china-forecast-card h3 {
+  font-size: 23px;
+  line-height: 1.16;
+  margin: 0 0 12px;
+}
+
+.china-forecast-card p {
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.china-forecast-card ul {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding-left: 18px;
+}
+
+.china-fund-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.china-fund-card {
+  background: var(--surface);
+  border: 2px solid var(--black);
+  box-shadow: var(--shadow-hard);
+  padding: 24px;
+}
+
+.china-fund-card__head {
+  align-items: flex-start;
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.china-fund-card h3 {
+  font-size: 25px;
+  line-height: 1.16;
+  margin: 12px 0 0;
+}
+
+.china-fund-card p {
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.china-fund-card dl {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 18px 0;
+}
+
+.china-fund-card dt {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.china-fund-card dd {
+  font-weight: 800;
+  margin: 4px 0 0;
+}
+
+.china-fund-card ol {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.china-fund-card li {
+  align-items: center;
+  border: 1px solid var(--line);
+  display: grid;
+  gap: 12px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-height: 42px;
+  padding: 9px 12px;
+}
+
+.china-fund-card li span {
+  font-weight: 800;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.china-fund-card li em {
+  color: var(--muted);
+  font-style: normal;
+  font-weight: 700;
 }
 
 .fund-grid {
@@ -1518,7 +1700,8 @@ canvas {
 
   .dashboard-grid,
   .two-column,
-  .publishing-grid {
+  .publishing-grid,
+  .ashare-layout {
     grid-template-columns: 1fr;
   }
 
@@ -1679,10 +1862,13 @@ canvas {
   .summary-grid,
   .knowledge-grid,
   .playbook-grid,
+  .ashare-layout,
   .forecast-grid,
   .fund-grid,
   .lesson-grid,
-  .guru-grid {
+  .guru-grid,
+  .china-market-grid,
+  .china-fund-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1701,13 +1887,18 @@ canvas {
   }
 
   .fund-card__top,
-  .guru-card__head {
+  .guru-card__head,
+  .china-fund-card__head {
     flex-direction: column;
   }
 
   .fund-card .badge {
     max-width: 100%;
     text-align: left;
+  }
+
+  .china-fund-card dl {
+    grid-template-columns: 1fr;
   }
 
   .product-strip {

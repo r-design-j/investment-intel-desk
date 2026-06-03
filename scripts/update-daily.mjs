@@ -45,6 +45,15 @@ const stooqSymbols = [
   { symbol: "gld.us", label: "GLD", shortLabel: "GLD" }
 ];
 
+const chinaIndexSecids = [
+  { secid: "1.000001", label: "上证指数", shortLabel: "上证" },
+  { secid: "0.399001", label: "深证成指", shortLabel: "深成" },
+  { secid: "0.399006", label: "创业板指", shortLabel: "创业板" },
+  { secid: "1.000300", label: "沪深300", shortLabel: "沪深300" },
+  { secid: "1.000905", label: "中证500", shortLabel: "中证500" },
+  { secid: "1.000688", label: "科创50", shortLabel: "科创50" }
+];
+
 const beginnerLessonBank = [
   {
     title: "基金不是稳赚账户",
@@ -138,6 +147,38 @@ const fundWatchlistTemplates = [
     suitableFor: "已经有现金桶和核心宽基，只拿少量资金做学习的人。",
     buyGuidance: "先设仓位上限和止错条件，别因为社交平台热度追高。",
     risk: "回撤可能很深，主题基金和加密相关资产可能长期跑输宽基。"
+  },
+  {
+    bucket: "A股宽基核心",
+    examples: ["510300", "159919", "510050"],
+    role: "用沪深300、上证50等宽基观察 A 股核心资产，不押单一公司。",
+    suitableFor: "主要收入和生活在中国、想学习人民币资产长期配置的新手。",
+    buyGuidance: "先分批观察估值和回撤，不要因为一天上涨就追满仓。",
+    risk: "A 股波动和政策预期影响较大，短期涨跌可能很剧烈。"
+  },
+  {
+    bucket: "A股中小盘/成长",
+    examples: ["510500", "512100", "159915"],
+    role: "观察中证500、中证1000、创业板等成长和中小盘方向。",
+    suitableFor: "已有核心宽基，只想用小比例资金学习成长风格的人。",
+    buyGuidance: "新手不宜把这类基金当核心仓，先设仓位上限。",
+    risk: "弹性大，回撤也大；估值、流动性和主题热度都会放大波动。"
+  },
+  {
+    bucket: "A股红利/价值",
+    examples: ["510880", "515180", "159581"],
+    role: "观察分红、低估值和现金流稳定类资产，适合学习防守风格。",
+    suitableFor: "想降低组合波动、关注股息和价值风格的人。",
+    buyGuidance: "先看指数规则和行业集中度，不能只看分红率。",
+    risk: "红利资产也会跌；高分红可能来自周期行业，收益不等于稳赚。"
+  },
+  {
+    bucket: "A股主动基金公开季报",
+    examples: ["005827", "161005", "003095"],
+    role: "用公开季报学习基金经理风格和持仓，不当成实时跟单。",
+    suitableFor: "想研究中国基金经理如何配置白酒、医药、科技、港股等方向的人。",
+    buyGuidance: "先看基金经理任期、回撤、规模、持仓集中度和是否适合自己的期限。",
+    risk: "季报滞后，基金经理可能已经调仓；主动基金还存在风格漂移和规模压力。"
   }
 ];
 
@@ -147,6 +188,14 @@ const guruManagers = [
   { name: "Pershing Square / Bill Ackman", cik: "0001336528", lesson: "集中持仓，重视商业质量和催化因素。" },
   { name: "Duquesne Family Office / Stanley Druckenmiller", cik: "0001536411", lesson: "更偏宏观和机会型，仓位变化可能很快。" },
   { name: "Appaloosa / David Tepper", cik: "0001656456", lesson: "关注周期、赔率和风险资产再定价。" }
+];
+
+const chinaFundProfiles = [
+  { code: "005827", style: "大盘消费/港股", lesson: "张坤代表性产品之一，适合学习高集中度消费和港股配置的波动。" },
+  { code: "161005", style: "长期成长", lesson: "朱少醒长期管理产品，适合学习长期主动基金和风格稳定性。" },
+  { code: "003095", style: "医药主题", lesson: "葛兰代表性医药基金，适合学习主题基金的高波动和行业周期。" },
+  { code: "260108", style: "消费成长", lesson: "刘彦春代表性产品，适合观察消费成长风格的回撤和修复。" },
+  { code: "163406", style: "均衡成长", lesson: "兴全合润适合观察均衡成长型主动基金的持仓变化。" }
 ];
 
 async function fetchText(url, timeoutMs = 12000) {
@@ -336,6 +385,34 @@ async function fetchCrypto() {
   }));
 }
 
+async function fetchEastmoneyQuotes(secids) {
+  const fields = "f12,f13,f14,f2,f3,f4,f5,f6,f17,f18";
+  const url = `https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&fields=${fields}&secids=${encodeURIComponent(secids.join(","))}`;
+  const payload = JSON.parse(await fetchText(url, 12000));
+  if (payload.rc !== 0 || !payload.data?.diff?.length) throw new Error("No Eastmoney quote rows");
+  return payload.data.diff;
+}
+
+async function fetchChinaMarket() {
+  const rows = await fetchEastmoneyQuotes(chinaIndexSecids.map((item) => item.secid));
+  return rows.map((row) => {
+    const meta = chinaIndexSecids.find((item) => item.secid === `${row.f13}.${row.f12}`);
+    const changePct = Number(row.f3);
+    return {
+      label: meta?.label || row.f14,
+      shortLabel: meta?.shortLabel || row.f14,
+      value: Number(row.f2),
+      unit: "",
+      changePct: Number.isFinite(changePct) ? changePct : null,
+      change: Number(row.f4),
+      turnoverCny: Number(row.f6),
+      score: Number.isFinite(changePct) ? Math.min(100, Math.max(0, 50 + changePct * 12)) : 50,
+      note: `东方财富快照，涨跌幅 ${Number.isFinite(changePct) ? changePct.toFixed(2) : "N/A"}%。`,
+      sourceUrl: "https://quote.eastmoney.com/center/gridlist.html#index_sh"
+    };
+  }).filter((item) => Number.isFinite(item.value));
+}
+
 function dayOfYear(date = new Date()) {
   const start = Date.UTC(date.getUTCFullYear(), 0, 0);
   const now = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
@@ -408,8 +485,127 @@ function buildFundWatchlist(markets) {
     ...item,
     currentRead: item.bucket.includes("债券") || item.bucket.includes("现金")
       ? rateNote
+      : item.bucket.includes("A股")
+        ? "这不是买入指令，只是把 A 股基金放进同一套风险框架里观察。"
       : "这不是买入指令，只是帮助新手理解不同基金在组合里的角色。"
   }));
+}
+
+function buildChinaForecasts(chinaMarkets, globalMarkets, calendar) {
+  const sh = chinaMarkets.find((item) => item.shortLabel === "上证");
+  const cyb = chinaMarkets.find((item) => item.shortLabel === "创业板");
+  const hs300 = chinaMarkets.find((item) => item.shortLabel === "沪深300");
+  const tenYear = Number(globalMarkets.find((item) => item.shortLabel === "10Y")?.value);
+  const strongGrowth = Number(cyb?.changePct) > Number(sh?.changePct || 0) + 0.8;
+  const broadPositive = chinaMarkets.filter((item) => Number(item.changePct) > 0).length >= 4;
+  const nextEvent = calendar.find((item) => /CPI|PCE|Employment|FOMC|PMI/i.test(item.event)) || calendar[0];
+
+  return {
+    tomorrow: {
+      title: "大A明日观察",
+      direction: broadPositive ? "情绪偏暖，但先看量能和北向/成交持续性" : "偏震荡，别用一天涨跌判断趋势",
+      confidence: "中等偏低",
+      thesis: strongGrowth
+        ? "创业板和科创相关指数弹性更强，说明资金在试探成长方向，但高波动资产容易隔日分化。"
+        : "如果大盘指数上涨但成交和行业扩散不足，短线更像情绪修复，不等于趋势确认。",
+      watch: [
+        sh ? `上证指数是否站稳 ${Math.round(sh.value)} 附近` : "上证指数关键位置",
+        hs300 ? `沪深300涨跌幅 ${Number(hs300.changePct).toFixed(2)}%，观察核心资产是否跟上` : "沪深300是否同步",
+        nextEvent ? `外部变量：${nextEvent.date} ${nextEvent.event}` : "外部利率和汇率变化"
+      ],
+      noviceMove: "新手明日不要追单日强势行业，先确认自己是做长期配置还是短线交易。"
+    },
+    week: {
+      title: "大A本周观察",
+      direction: "政策预期、成交量、人民币资产信心是主线",
+      confidence: "中等",
+      thesis: Number.isFinite(tenYear) && tenYear >= 4.25
+        ? "海外长端利率仍偏高，A 股成长和外资风险偏好会受到扰动；更适合用宽基和分批观察。"
+        : "如果外部利率压力缓和，A 股宽基和成长方向更容易获得风险偏好修复。",
+      watch: [
+        "成交额是否放大并能维持，不只看指数红绿",
+        "红利/价值和成长/科技谁在领涨，判断市场风格",
+        "政策新闻要回到官方公告，避免被社交平台情绪带节奏"
+      ],
+      noviceMove: "本周适合建立 A 股观察清单：沪深300、中证500、创业板、红利，不急着全买。"
+    }
+  };
+}
+
+function jsVar(text, name) {
+  const match = text.match(new RegExp(`var\\s+${name}\\s*=\\s*([\\s\\S]*?);(?=\\/\\*|var\\s|$)`));
+  if (!match) return null;
+  return match[1].trim();
+}
+
+function jsStringVar(text, name) {
+  const raw = jsVar(text, name);
+  if (!raw) return "";
+  try {
+    return JSON.parse(raw);
+  } catch {
+    return raw.replace(/^"|"$/g, "");
+  }
+}
+
+function jsJsonVar(text, name) {
+  const raw = jsVar(text, name);
+  if (!raw) return null;
+  return JSON.parse(raw);
+}
+
+async function fetchChinaFundProfile(profile) {
+  const url = `https://fund.eastmoney.com/pingzhongdata/${profile.code}.js`;
+  const text = await fetchText(url, 15000);
+  const fundName = jsStringVar(text, "fS_name") || profile.code;
+  const managers = jsJsonVar(text, "Data_currentFundManager") || [];
+  const stockCodesNew = jsJsonVar(text, "stockCodesNew") || [];
+  const stockPosition = jsJsonVar(text, "Data_fundSharesPositions") || [];
+  const latestStockPosition = stockPosition.length ? Number(stockPosition[stockPosition.length - 1][1]) : null;
+  const quoteRows = stockCodesNew.length ? await fetchEastmoneyQuotes(stockCodesNew.slice(0, 10)) : [];
+  const holdings = quoteRows.slice(0, 6).map((row) => ({
+    code: row.f12,
+    name: row.f14,
+    changePct: Number(row.f3),
+    price: Number(row.f2)
+  }));
+
+  return {
+    code: profile.code,
+    name: fundName,
+    style: profile.style,
+    managerNames: managers.map((item) => item.name).filter(Boolean).slice(0, 3),
+    managerSummary: managers[0]?.workTime ? `${managers[0].name} · ${managers[0].workTime}` : "",
+    fundSize: managers[0]?.fundSize || "",
+    returns: {
+      oneMonth: jsStringVar(text, "syl_1y"),
+      threeMonth: jsStringVar(text, "syl_3y"),
+      sixMonth: jsStringVar(text, "syl_6y"),
+      oneYear: jsStringVar(text, "syl_1n")
+    },
+    stockPosition: Number.isFinite(latestStockPosition) ? latestStockPosition : null,
+    holdings,
+    lesson: profile.lesson,
+    sourceUrl: `https://fund.eastmoney.com/${profile.code}.html`
+  };
+}
+
+async function fetchChinaFunds(existingFunds = []) {
+  const funds = [];
+  for (const profile of chinaFundProfiles) {
+    try {
+      funds.push(await fetchChinaFundProfile(profile));
+      await wait(160);
+    } catch {
+      const fallback = existingFunds.find((item) => item.code === profile.code);
+      if (fallback) funds.push(fallback);
+    }
+  }
+  return {
+    label: "中国基金公开季报观察",
+    note: "基金持仓来自公开页面和定期披露，存在滞后；只能用来学习基金经理风格，不能照抄买入。",
+    funds
+  };
 }
 
 function parseInfoTable(xml) {
@@ -629,6 +825,22 @@ async function collectUpdates(existing) {
   const beginnerLessons = buildBeginnerLessons();
   const forecasts = buildForecasts(mergedMarkets, scenarios, existing.calendar || []);
   const fundWatchlist = buildFundWatchlist(mergedMarkets);
+
+  let chinaMarkets = existing.chinaMarkets || [];
+  try {
+    chinaMarkets = await fetchChinaMarket();
+    diagnostics.push({ source: "Eastmoney A-share indices", status: "ok" });
+  } catch (error) {
+    diagnostics.push({ source: "Eastmoney A-share indices", status: `failed (${error.message || "unknown"})` });
+  }
+
+  const chinaForecasts = buildChinaForecasts(chinaMarkets, mergedMarkets, existing.calendar || []);
+  const chinaFunds = await fetchChinaFunds(existing.chinaFunds?.funds || []);
+  diagnostics.push({
+    source: "Eastmoney China fund public holdings",
+    status: chinaFunds.funds.length ? "ok" : "failed (No China fund rows)"
+  });
+
   const guruPortfolios = await fetchGuruPortfolios(existing.guruPortfolios?.managers || []);
   diagnostics.push({
     source: "SEC 13F public holdings",
@@ -655,6 +867,9 @@ async function collectUpdates(existing) {
     beginnerLessons,
     forecasts,
     fundWatchlist,
+    chinaMarkets,
+    chinaForecasts,
+    chinaFunds,
     guruPortfolios,
     updateDiagnostics: diagnostics
   };

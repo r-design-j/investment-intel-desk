@@ -22,6 +22,14 @@ const formatNumber = (value, suffix = "") => {
   return `${formatted}${suffix}`;
 };
 
+const formatCny = (value) => {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "N/A";
+  if (Math.abs(number) >= 1000000000000) return `${(number / 1000000000000).toFixed(2)}万亿`;
+  if (Math.abs(number) >= 100000000) return `${(number / 100000000).toFixed(0)}亿`;
+  return `${number.toLocaleString("zh-CN", { maximumFractionDigits: 0 })}元`;
+};
+
 const toneClass = (tone) => {
   if (tone === "elevated") return "badge--warning";
   if (tone === "stress") return "badge--danger";
@@ -61,6 +69,9 @@ function createFallbackData(message = "daily.json 暂不可用") {
     beginnerLessons: [],
     forecasts: {},
     fundWatchlist: [],
+    chinaMarkets: [],
+    chinaForecasts: {},
+    chinaFunds: { funds: [] },
     guruPortfolios: { managers: [] },
     playbooks: [],
     publishingLoop: [],
@@ -86,6 +97,13 @@ function normalizeDailyData(data) {
     beginnerLessons: ensureArray(data?.beginnerLessons),
     forecasts: data?.forecasts || fallback.forecasts,
     fundWatchlist: ensureArray(data?.fundWatchlist),
+    chinaMarkets: ensureArray(data?.chinaMarkets),
+    chinaForecasts: data?.chinaForecasts || fallback.chinaForecasts,
+    chinaFunds: {
+      ...fallback.chinaFunds,
+      ...(data?.chinaFunds || {}),
+      funds: ensureArray(data?.chinaFunds?.funds)
+    },
     guruPortfolios: {
       ...fallback.guruPortfolios,
       ...(data?.guruPortfolios || {}),
@@ -144,6 +162,9 @@ function render() {
   renderMarkets(data.markets);
   renderScenarios(data.scenarios);
   renderForecasts(data.forecasts);
+  renderChinaMarkets(data.chinaMarkets);
+  renderChinaForecasts(data.chinaForecasts);
+  renderChinaFunds(data.chinaFunds);
   renderFundWatchlist(data.fundWatchlist);
   renderNewsFilters(data.news);
   renderNews(data.news);
@@ -277,6 +298,69 @@ function renderForecasts(forecasts) {
       <div class="novice-note">${escapeHtml(item.noviceMove || "先观察，再决策。")}</div>
     </article>
   `).join("") : `<div class="empty-state">等待预测模型</div>`;
+}
+
+function renderChinaMarkets(markets) {
+  el("#chinaMarketGrid").innerHTML = markets.length ? markets.map((item) => {
+    const change = Number(item.changePct);
+    const up = Number.isFinite(change) && change >= 0;
+    return `
+      <article class="china-market-card ${up ? "is-up" : "is-down"}">
+        <div class="china-market-card__top">
+          <h3>${escapeHtml(item.label)}</h3>
+          <span>${escapeHtml(item.shortLabel)}</span>
+        </div>
+        <strong>${formatNumber(item.value)}</strong>
+        <p>${Number.isFinite(change) ? `${up ? "+" : ""}${change.toFixed(2)}%` : "N/A"} · 成交 ${formatCny(item.turnoverCny)}</p>
+      </article>
+    `;
+  }).join("") : `<div class="empty-state">等待 A 股指数数据</div>`;
+}
+
+function renderChinaForecasts(forecasts) {
+  const items = [forecasts?.tomorrow, forecasts?.week].filter(Boolean);
+  el("#chinaForecastList").innerHTML = items.length ? items.map((item) => `
+    <article class="china-forecast-card">
+      <div class="project-meta">
+        <span>${escapeHtml(item.title || "大A观察")}</span>
+        <span>${escapeHtml(item.confidence || "非个性化")}</span>
+      </div>
+      <h3>${escapeHtml(item.direction)}</h3>
+      <p>${escapeHtml(item.thesis)}</p>
+      <ul>${ensureArray(item.watch).map((point) => `<li>${escapeHtml(point)}</li>`).join("")}</ul>
+      <div class="novice-note">${escapeHtml(item.noviceMove || "先观察，再决策。")}</div>
+    </article>
+  `).join("") : `<div class="empty-state">等待大 A 预测</div>`;
+}
+
+function renderChinaFunds(chinaFunds) {
+  const funds = ensureArray(chinaFunds?.funds);
+  el("#chinaFundNote").textContent = chinaFunds?.note || "中国基金公开季报只用于学习，不能照抄买入。";
+  el("#chinaFundGrid").innerHTML = funds.length ? funds.map((fund) => `
+    <article class="china-fund-card">
+      <div class="china-fund-card__head">
+        <div>
+          <span class="lesson-index">${escapeHtml(fund.code)}</span>
+          <h3><a href="${escapeHtml(fund.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(fund.name)}</a></h3>
+        </div>
+        <span class="badge">${escapeHtml(fund.style)}</span>
+      </div>
+      <p>${escapeHtml(fund.lesson)}</p>
+      <dl>
+        <div><dt>基金经理</dt><dd>${escapeHtml(ensureArray(fund.managerNames).join(" / ") || "待更新")}</dd></div>
+        <div><dt>股票仓位</dt><dd>${fund.stockPosition === null || fund.stockPosition === undefined ? "待更新" : `${Number(fund.stockPosition).toFixed(2)}%`}</dd></div>
+        <div><dt>近 1 月 / 1 年</dt><dd>${escapeHtml(fund.returns?.oneMonth || "N/A")} / ${escapeHtml(fund.returns?.oneYear || "N/A")}</dd></div>
+      </dl>
+      <ol>
+        ${ensureArray(fund.holdings).slice(0, 5).map((holding) => `
+          <li>
+            <span>${escapeHtml(holding.name)} <em>${escapeHtml(holding.code)}</em></span>
+            <strong>${Number.isFinite(Number(holding.changePct)) ? `${Number(holding.changePct) >= 0 ? "+" : ""}${Number(holding.changePct).toFixed(2)}%` : "N/A"}</strong>
+          </li>
+        `).join("")}
+      </ol>
+    </article>
+  `).join("") : `<div class="empty-state">等待中国基金公开持仓</div>`;
 }
 
 function renderFundWatchlist(items) {

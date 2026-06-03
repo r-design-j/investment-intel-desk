@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260603-interaction-audit-5">
+    <link rel="stylesheet" href="styles.css?v=20260603-ashare-1">
   </head>
   <body>
     <header class="site-header">
@@ -19,6 +19,7 @@
         <a class="nav-link is-active" href="#top"><span class="nav-icon nav-icon--home" aria-hidden="true"></span>首页</a>
         <a class="nav-link" href="#brief"><span class="nav-icon nav-icon--about" aria-hidden="true"></span>今天</a>
         <a class="nav-link" href="#forecast"><span class="nav-icon nav-icon--case" aria-hidden="true"></span>预测</a>
+        <a class="nav-link" href="#ashare"><span class="nav-icon nav-icon--home" aria-hidden="true"></span>大A</a>
         <a class="nav-link" href="#funds"><span class="nav-icon nav-icon--play" aria-hidden="true"></span>基金</a>
         <a class="nav-link" href="#learn"><span class="nav-icon nav-icon--about" aria-hidden="true"></span>小白</a>
         <a class="nav-link" href="#news"><span class="nav-icon nav-icon--case" aria-hidden="true"></span>新闻</a>
@@ -111,6 +112,38 @@
           <p>预测只给方向、关键变量和新手动作边界，不做个性化买卖指令。</p>
         </div>
         <div id="forecastGrid" class="forecast-grid"></div>
+      </section>
+
+      <section id="ashare" class="section-block ashare-board" aria-label="大 A 市场观察" data-od-id="a-share-desk">
+        <div class="section-title section-title--split">
+          <div>
+            <p class="hand-label">for Chinese investors</p>
+            <h2>大A观察</h2>
+          </div>
+          <p>A 股指数、人民币基金和国内基金经理公开季报单独成区，不再只看美股。</p>
+        </div>
+        <div class="ashare-layout">
+          <article class="project-card">
+            <div class="project-meta">
+              <span>A股指数</span>
+              <span>东方财富快照</span>
+            </div>
+            <div id="chinaMarketGrid" class="china-market-grid"></div>
+          </article>
+          <article class="project-card">
+            <div class="project-meta">
+              <span>方向判断</span>
+              <span>非个性化</span>
+            </div>
+            <div id="chinaForecastList" class="china-forecast-list"></div>
+          </article>
+        </div>
+        <div class="section-title section-title--compact">
+          <p class="hand-label">public fund reports</p>
+          <h2>中国基金经理公开季报</h2>
+          <p id="chinaFundNote">中国基金公开季报只用于学习，不能照抄买入。</p>
+        </div>
+        <div id="chinaFundGrid" class="china-fund-grid"></div>
       </section>
 
       <section id="funds" class="section-block fund-board" aria-label="基金观察池" data-od-id="fund-watchlist">
@@ -291,6 +324,6 @@
       <p>本页面仅用于公开信息整理、教育和研究，不构成法律、税务、投资或财务建议。页面里的基金代码、预测和公开持仓仅作学习观察，不代表适合你购买。任何组合调整都应结合个人目标、期限、现金流、税务和风险承受能力，并咨询持牌专业人士。</p>
     </footer>
 
-    <script src="app.js?v=20260603-interaction-audit-5" type="module"></script>
+    <script src="app.js?v=20260603-ashare-1" type="module"></script>
   </body>
 </html>
