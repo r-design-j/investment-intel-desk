@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Investment Intel Desk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20260603-interaction-audit-5">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Investment Intel Desk home">
+        <span class="brand-mark" aria-hidden="true"><i></i></span>
+        <span>IID</span>
+      </a>
+      <nav class="primary-nav" aria-label="页面导航">
+        <a class="nav-link is-active" href="#top"><span class="nav-icon nav-icon--home" aria-hidden="true"></span>HOME</a>
+        <a class="nav-link" href="#brief"><span class="nav-icon nav-icon--about" aria-hidden="true"></span>BRIEF</a>
+        <a class="nav-link" href="#pulse"><span class="nav-icon nav-icon--case" aria-hidden="true"></span>SIGNALS</a>
+        <a class="nav-link" href="#news"><span class="nav-icon nav-icon--play" aria-hidden="true"></span>RADAR</a>
+      </nav>
+      <div class="header-actions">
+        <span id="asOf" class="timestamp">加载中</span>
+        <button id="refreshButton" class="ghost-button" type="button" title="重新载入数据" aria-label="重新载入数据">
+          <span aria-hidden="true">↻</span>
+          <span>UPDATE</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero canvas-section" aria-label="产品概览" data-od-id="hero">
+        <div class="ruler" aria-hidden="true">
+          <span>0</span><span>100</span><span>200</span><span>300</span><span>400</span><span>500</span><span>600</span><span>700</span><span>800</span><span>900</span><span>1000</span><span>1100</span><span>1200</span>
+        </div>
+
+        <p class="clock">10:11:19 AM</p>
+        <div class="avatar-chip avatar-chip--left" aria-hidden="true">IID</div>
+        <div class="avatar-chip avatar-chip--right" aria-hidden="true">AI</div>
+
+        <div class="hero-stage">
+          <div class="scribble-label">public signal room</div>
+          <div class="sticker sticker--mint">Currently reading Treasury / Fed / SEC</div>
+          <div class="sticker sticker--paper">Previously: raw market noise</div>
+          <div class="selection-frame" aria-hidden="true">
+            <i></i><i></i><i></i><i></i>
+          </div>
+          <h1>每日投资情报<br>工作台</h1>
+          <div class="availability"><i></i><span>DAILY PUBLIC MARKET BRIEF</span></div>
+          <p id="briefText" class="hero-summary">正在载入公开市场数据和每日研究快照。</p>
+          <div id="briefTags" class="tag-row"></div>
+          <div class="hero-actions">
+            <a class="primary-button" href="#pulse"><span aria-hidden="true">↗</span> 查看今日脉搏</a>
+            <a class="secondary-button" href="#news">阅读新闻雷达</a>
+          </div>
+        </div>
+
+        <div class="role-pill">INVESTMENT INTEL DESK</div>
+        <div class="location-pill">NON-PERSONALIZED</div>
+      </section>
+
+      <section class="metrics-strip" aria-label="关键状态" data-od-id="metrics">
+        <div>
+          <span class="strip-label">Model Confidence</span>
+          <strong id="confidenceBadge">置信度</strong>
+        </div>
+        <div>
+          <span class="strip-label">Sources Online</span>
+          <strong id="sourcesOnline">核验中</strong>
+        </div>
+        <div>
+          <span class="strip-label">Next Event</span>
+          <strong id="nextEvent">宏观日历</strong>
+        </div>
+        <div>
+          <span class="strip-label">Advice Boundary</span>
+          <strong>Non-personalized</strong>
+        </div>
+      </section>
+
+      <section id="brief" class="section-block about-board" aria-label="今日总览" data-od-id="daily-brief">
+        <p class="hand-label">about today's brief!</p>
+        <div class="section-title">
+          <p class="eyebrow selected-label">what's up</p>
+          <h2>我们把复杂的市场噪声，拆成可复核的每日行动边界。</h2>
+        </div>
+        <div class="summary-grid">
+          <article class="panel panel--lead tilt-card">
+            <span class="year-tag">2026</span>
+            <h3>非个性化建议</h3>
+            <ul id="actionList" class="clean-list"></ul>
+          </article>
+          <article class="panel tilt-card tilt-card--reverse">
+            <span class="year-tag">risk</span>
+            <h3>风控底线</h3>
+            <ul id="guardrails" class="clean-list"></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="product-strip canvas-section" aria-label="产品预览" data-od-id="product-preview">
+        <div class="product-shell">
+          <div class="product-bar">
+            <div class="window-dots" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <strong>Daily Signal Room</strong>
+            <em>Public sources</em>
+          </div>
+          <div class="product-layout">
+            <nav class="product-sidebar" aria-label="预览导航">
+              <span class="is-active">Pulse</span>
+              <span>News</span>
+              <span>Risk</span>
+              <span>Sources</span>
+            </nav>
+            <div class="product-main">
+              <div class="desk-toolbar">
+                <p class="mono-label">Scenario model</p>
+                <div id="riskBadge" class="signal-badge">Risk review</div>
+              </div>
+              <div class="desk-focus">
+                <h2 id="briefTitle">今日情报摘要</h2>
+                <p>公开数据、新闻影响路径和风控边界合并成一张每日工作台。</p>
+              </div>
+              <div id="heroSignalStack" class="signal-stack"></div>
+            </div>
+            <aside class="product-aside" aria-label="来源状态">
+              <p class="mono-label">Source status</p>
+              <div id="heroSourceStatus" class="status-stack"></div>
+              <div class="next-check">
+                <span>Next check</span>
+                <strong id="heroNextEvent">等待日历</strong>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="pulse" class="section-block featured-board" aria-label="市场信号" data-od-id="market-pulse">
+        <div class="section-title section-title--split">
+          <div>
+            <p class="hand-label">explore today's work!</p>
+            <h2>FEATURED SIGNALS</h2>
+          </div>
+          <p>利率、通胀、政策和就业共同决定今日风险温度。</p>
+        </div>
+        <div class="dashboard-grid">
+          <article class="project-card project-card--wide">
+            <div class="project-meta">
+              <span>project 01</span>
+              <span>Macro Pulse</span>
+            </div>
+            <div id="marketTiles" class="metric-grid"></div>
+            <canvas id="pulseChart" width="980" height="320" aria-label="跨资产强弱评分图"></canvas>
+          </article>
+          <article class="project-card project-card--side">
+            <div class="project-meta">
+              <span>project 02</span>
+              <span>Scenario Radar</span>
+            </div>
+            <h3>趋势预测</h3>
+            <div id="scenarioList" class="scenario-stack"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="news" class="section-block news-board" aria-label="新闻与日历" data-od-id="news-radar">
+        <div class="section-title section-title--split">
+          <div>
+            <p class="hand-label">case study</p>
+            <h2>NEWS RADAR</h2>
+          </div>
+          <div id="newsFilters" class="filter-row" aria-label="新闻分类筛选"></div>
+        </div>
+        <div class="two-column">
+          <article class="project-card">
+            <div class="project-meta">
+              <span>facts</span>
+              <span>impact path</span>
+            </div>
+            <div id="newsList" class="news-list"></div>
+          </article>
+          <article class="project-card timeline-card">
+            <div class="project-meta">
+              <span>calendar</span>
+              <span>next check</span>
+            </div>
+            <h3>宏观日历</h3>
+            <div id="calendarList" class="timeline"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="knowledge" class="section-block knowledge-board" aria-label="投资知识地图" data-od-id="knowledge-system">
+        <div class="section-title section-title--split">
+          <div>
+            <p class="hand-label">playground</p>
+            <h2>KNOWLEDGE SYSTEM</h2>
+          </div>
+          <p>每张卡只保留原则和检查点，避免把复杂决策伪装成简单答案。</p>
+        </div>
+        <div id="knowledgeMap" class="knowledge-grid"></div>
+      </section>
+
+      <section class="section-block playbook-board" aria-label="社区和产品方案" data-od-id="community-playbooks">
+        <div class="section-title section-title--split">
+          <div>
+            <p class="hand-label">research notes</p>
+            <h2>COMMUNITY PLAYBOOKS</h2>
+          </div>
+          <p>社区热度只作为发现层，事实必须回到官方、披露和可信新闻源。</p>
+        </div>
+        <div id="playbookGrid" class="playbook-grid"></div>
+      </section>
+
+      <section id="publishing" class="section-block contact-board" aria-label="每日更新与来源" data-od-id="publishing-loop">
+        <div class="contact-card">
+          <div class="section-title">
+            <p class="hand-label">let's publish</p>
+            <h2>DAILY UPDATE LOOP</h2>
+            <p>自动采集只解决速度，最终质量来自来源分层、诊断和复盘。</p>
+          </div>
+          <div class="publishing-grid">
+            <article class="dark-panel">
+              <h3>每日更新机制</h3>
+              <ol id="publishingLoop" class="numbered-list"></ol>
+            </article>
+            <article class="dark-panel">
+              <h3>来源账本</h3>
+              <div id="sourceList" class="source-list"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>本页面仅用于公开信息整理、教育和研究，不构成法律、税务、投资或财务建议。任何组合调整都应结合个人目标、期限、现金流、税务和风险承受能力，并咨询持牌专业人士。</p>
+    </footer>
+
+    <script src="app.js?v=20260603-interaction-audit-5" type="module"></script>
+  </body>
+</html>

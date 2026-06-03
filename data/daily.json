@@ -1,0 +1,442 @@
+{
+  "asOf": {
+    "display": "2026/06/03 09:43",
+    "iso": "2026-06-03T01:43:56.344Z"
+  },
+  "brief": {
+    "title": "每日公开数据已更新，先看利率、通胀和监管新闻",
+    "summary": "10 年期美债最新约 4.46%，收益率维持高位时，长久期债券和高估值成长股更依赖通胀回落确认。 本页面只输出研究框架和非个性化行动清单。",
+    "confidence": "中等",
+    "tags": [
+      "自动快照",
+      "公开来源",
+      "规则情景",
+      "需人工复核"
+    ]
+  },
+  "risk": {
+    "level": "elevated",
+    "levelLabel": "风险偏高：先看通胀/利率",
+    "guardrails": [
+      "任何单一证券、KOL 观点或社交热度都不能直接转成买卖决策。",
+      "组合调整先检查目标资产配置、期限、流动性、税务成本和最大回撤承受力。",
+      "高波动资产使用预设仓位上限；加密资产和杠杆产品只进入可承受归零或极端回撤的风险桶。",
+      "新闻必须区分事实、解释和预测；预测只能以情景概率表达。"
+    ]
+  },
+  "actions": [
+    "把 3-12 个月必要现金流从风险资产中隔离，避免被市场波动迫使卖出。",
+    "用年度或阈值再平衡检查股票、债券、现金、另类资产是否偏离目标区间。",
+    "通胀高于 2% 目标且政策利率维持高位时，优先复核久期、成长股估值和负债成本敏感度。",
+    "社交平台只作为情绪和主题发现，不作为事实来源；事实回到官方公告、财报和可信媒体交叉验证。"
+  ],
+  "markets": [
+    {
+      "label": "3M Treasury",
+      "shortLabel": "3M",
+      "value": 3.77,
+      "unit": "%",
+      "score": 60.32,
+      "note": "U.S. Treasury latest 2026-06-02."
+    },
+    {
+      "label": "2Y Treasury",
+      "shortLabel": "2Y",
+      "value": 4.05,
+      "unit": "%",
+      "score": 64.8,
+      "note": "U.S. Treasury latest 2026-06-02."
+    },
+    {
+      "label": "10Y Treasury",
+      "shortLabel": "10Y",
+      "value": 4.46,
+      "unit": "%",
+      "score": 71.36,
+      "note": "U.S. Treasury latest 2026-06-02."
+    },
+    {
+      "label": "30Y Treasury",
+      "shortLabel": "30Y",
+      "value": 4.97,
+      "unit": "%",
+      "score": 79.52,
+      "note": "U.S. Treasury latest 2026-06-02."
+    },
+    {
+      "label": "CPI YoY",
+      "shortLabel": "CPI",
+      "value": 3.8,
+      "unit": "%",
+      "score": 72,
+      "note": "BLS 2026-05-12 发布，4 月同比 3.8%。"
+    },
+    {
+      "label": "Core CPI YoY",
+      "shortLabel": "Core",
+      "value": 2.8,
+      "unit": "%",
+      "score": 54,
+      "note": "BLS 4 月核心 CPI 同比 2.8%。"
+    },
+    {
+      "label": "PCE YoY",
+      "shortLabel": "PCE",
+      "value": 3.8,
+      "unit": "%",
+      "score": 72,
+      "note": "BEA 2026-05-28 发布，4 月 PCE 同比 3.8%。"
+    },
+    {
+      "label": "Fed Funds Range",
+      "shortLabel": "Fed",
+      "value": 3.75,
+      "unit": "%",
+      "score": 68,
+      "note": "Fed 4 月维持 3.50%-3.75%。"
+    },
+    {
+      "label": "Unemployment",
+      "shortLabel": "Jobs",
+      "value": 4.3,
+      "unit": "%",
+      "score": 48,
+      "note": "BLS 4 月失业率 4.3%，5 月报告将于 6 月 5 日发布。"
+    },
+    {
+      "label": "Payrolls",
+      "shortLabel": "NFP",
+      "value": 115,
+      "unit": "k",
+      "score": 45,
+      "note": "BLS 4 月非农就业增加 115k。"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "基准情景：利率敏感资产继续受估值约束",
+      "probability": "45%",
+      "tone": "elevated",
+      "path": "收益率维持高位时，长久期债券和高估值成长股更依赖通胀回落确认。"
+    },
+    {
+      "name": "上行情景：盈利和流动性预期改善",
+      "probability": "30%",
+      "tone": "normal",
+      "path": "宽基资产受益于盈利韧性和资金风险偏好，高波动资产仍需仓位上限。"
+    },
+    {
+      "name": "下行情景：通胀或信用压力再定价",
+      "probability": "25%",
+      "tone": "stress",
+      "path": "能源、信用利差或就业意外走弱会放大波动，现金缓冲和再平衡纪律优先。"
+    }
+  ],
+  "news": [
+    {
+      "title": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
+      "category": "Policy",
+      "impact": "政策利率和声明措辞会影响股债估值、美元和现金收益率。",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260526a.htm"
+    },
+    {
+      "title": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
+      "category": "Policy",
+      "impact": "纳入每日新闻队列，作为事实输入而非直接交易信号。",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm"
+    },
+    {
+      "title": "Updated Investor Bulletin: Protecting Your Online Investment Accounts from Fraud",
+      "category": "Regulation",
+      "impact": "投资者保护信息提示需要先验证平台、人员资质和资金流向。",
+      "url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/updated-2"
+    },
+    {
+      "title": "Updated Investor Alert: Identity Theft, Data Breaches and Your Investment Accounts",
+      "category": "Regulation",
+      "impact": "投资者保护信息提示需要先验证平台、人员资质和资金流向。",
+      "url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/investor-59"
+    },
+    {
+      "title": "SEC Publishes Draft Strategic Plan for Public Comment",
+      "category": "Regulation",
+      "impact": "政策利率和声明措辞会影响股债估值、美元和现金收益率。",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-51-sec-publishes-draft-strategic-plan-public-comment"
+    },
+    {
+      "title": "SEC Announces Four New Members of Investor Advisory Committee",
+      "category": "Regulation",
+      "impact": "纳入每日新闻队列，作为事实输入而非直接交易信号。",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-50-sec-announces-four-new-members-investor-advisory-committee"
+    },
+    {
+      "title": "BLS：2026 年 4 月 CPI-U 环比 0.6%，同比 3.8%",
+      "category": "Inflation",
+      "impact": "通胀读数高于 Fed 2% 目标，强化利率更久维持高位的路径；能源价格贡献显著。",
+      "url": "https://www.bls.gov/news.release/cpi.htm"
+    },
+    {
+      "title": "BEA：2026 年 4 月 PCE 价格指数同比 3.8%，核心 PCE 同比 3.3%",
+      "category": "Inflation",
+      "impact": "PCE 是 Fed 关注的通胀口径；实际 PCE 仅环比 0.1%，显示消费量增长有限。",
+      "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-april-2026"
+    }
+  ],
+  "calendar": [
+    {
+      "date": "2026-06-03",
+      "event": "ISM Services PMI",
+      "source": "ISM",
+      "whyItMatters": "服务业价格和新订单影响通胀粘性与增长判断。"
+    },
+    {
+      "date": "2026-06-05",
+      "event": "U.S. Employment Situation for May",
+      "source": "BLS",
+      "whyItMatters": "就业走弱会改变 Fed 风险权衡；工资和失业率影响消费与通胀。"
+    },
+    {
+      "date": "2026-06-10",
+      "event": "U.S. CPI for May",
+      "source": "BLS",
+      "whyItMatters": "下一次 CPI 是 6 月 FOMC 前最关键的通胀数据之一。"
+    },
+    {
+      "date": "2026-06-16/17",
+      "event": "FOMC Meeting",
+      "source": "Federal Reserve",
+      "whyItMatters": "利率路径、声明措辞和投票分歧会影响股债汇和黄金。"
+    },
+    {
+      "date": "2026-06-25",
+      "event": "Personal Income and Outlays for May",
+      "source": "BEA",
+      "whyItMatters": "PCE 通胀与消费数据用于验证通胀压力是否扩散。"
+    }
+  ],
+  "knowledge": [
+    {
+      "area": "资产配置",
+      "principle": "先定义目标、期限和风险承受力，再决定股票、债券、现金和另类资产比例。",
+      "checkpoints": [
+        "目标收益不是承诺收益",
+        "使用再平衡阈值",
+        "账户类型影响税务和持仓位置"
+      ]
+    },
+    {
+      "area": "股票与 ETF",
+      "principle": "宽基低成本工具适合核心仓，个股和主题仓应有研究假设、止错规则和仓位上限。",
+      "checkpoints": [
+        "费用率和跟踪误差",
+        "估值与盈利质量",
+        "行业与单票集中度"
+      ]
+    },
+    {
+      "area": "债券与现金",
+      "principle": "利率、久期、信用和再投资风险分开看；现金桶服务于流动性和心理安全边际。",
+      "checkpoints": [
+        "久期敏感度",
+        "信用评级和利差",
+        "到期结构"
+      ]
+    },
+    {
+      "area": "房地产与 REITs",
+      "principle": "区分自住、出租、REIT 和地产债；利率和现金流覆盖率是关键变量。",
+      "checkpoints": [
+        "负债成本",
+        "空置率和租金",
+        "税费与流动性"
+      ]
+    },
+    {
+      "area": "加密资产",
+      "principle": "只把加密资产放进高波动风险桶；关注托管、链上安全、监管和流动性。",
+      "checkpoints": [
+        "仓位上限",
+        "交易所和钱包风险",
+        "税务记录"
+      ]
+    },
+    {
+      "area": "宏观指标",
+      "principle": "CPI/PCE、就业、PMI、利率曲线、信用利差和美元共同决定大类资产环境。",
+      "checkpoints": [
+        "数据发布日期",
+        "同比和环比都看",
+        "预期差比绝对值更影响价格"
+      ]
+    },
+    {
+      "area": "风险管理",
+      "principle": "先定义会失败的条件，再定义进场条件；避免把波动误认为永久损失，也避免忽略流动性。",
+      "checkpoints": [
+        "最大回撤",
+        "相关性上升",
+        "杠杆和保证金"
+      ]
+    },
+    {
+      "area": "税务与监管",
+      "principle": "短期/长期资本利得、股息、利息、基金分配和数字资产记录会改变税后收益。",
+      "checkpoints": [
+        "持有期",
+        "损益实现",
+        "专业人士资质核验"
+      ]
+    }
+  ],
+  "playbooks": [
+    {
+      "name": "Vanguard / Bogleheads",
+      "pattern": "长期、低成本、分散、再平衡，用投资政策书约束行为。",
+      "productMoves": [
+        "提供核心资产配置模板",
+        "把费用率和税务影响前置",
+        "用纪律清单减少追涨杀跌"
+      ]
+    },
+    {
+      "name": "Warren Buffett / Berkshire Letters",
+      "pattern": "强调商业质量、长期持有、现金安全边际和低成本宽基工具。",
+      "productMoves": [
+        "区分企业研究和市场噪声",
+        "给每个观点配事实来源",
+        "记录现金与机会成本"
+      ]
+    },
+    {
+      "name": "Ray Dalio / All Weather",
+      "pattern": "按增长和通胀不同环境思考资产表现，重视风险贡献而非名义仓位。",
+      "productMoves": [
+        "显示四象限宏观环境",
+        "把组合风险按资产桶拆解",
+        "趋势预测用情景而非单点"
+      ]
+    },
+    {
+      "name": "Howard Marks / Oaktree Memos",
+      "pattern": "周期、赔率和风险控制优先，避免对宏观预测过度自信。",
+      "productMoves": [
+        "把市场温度做成仪表盘",
+        "每条建议标注不确定性",
+        "保留反方情景"
+      ]
+    },
+    {
+      "name": "TradingView / Stocktwits",
+      "pattern": "实时图表、watchlist、社交情绪和主题发现适合做输入层，不适合直接做交易层。",
+      "productMoves": [
+        "把社交热度标记为情绪信号",
+        "强制事实核验链接",
+        "避免无来源喊单"
+      ]
+    },
+    {
+      "name": "Seeking Alpha / Substack / YouTube",
+      "pattern": "专家订阅、深度文章、社区讨论和创作者经济是投研内容产品的核心形态。",
+      "productMoves": [
+        "做摘要和来源账本",
+        "不复制付费内容",
+        "给观点建立历史命中和风险复盘"
+      ]
+    }
+  ],
+  "publishingLoop": [
+    "每日定时运行 scripts/update-daily.mjs，抓取公开 RSS、Treasury/FRED、Stooq、CoinGecko 等数据。",
+    "脚本生成 data/daily.json，按规则更新新闻队列、跨资产信号和情景预测。",
+    "人工或三方模型复核高影响新闻，确认事实、日期、来源和风险提示。",
+    "通过 GitHub Actions 提交数据快照并发布到 GitHub Pages；无仓库时本地用 npm run serve 预览。",
+    "每周复盘预测偏差，更新规则和来源白名单。"
+  ],
+  "sources": [
+    {
+      "name": "BLS CPI News Release",
+      "use": "通胀、分项、下一次 CPI 日期。",
+      "url": "https://www.bls.gov/news.release/cpi.htm"
+    },
+    {
+      "name": "BEA Personal Income and Outlays",
+      "use": "PCE、核心 PCE、收入、消费和储蓄率。",
+      "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-april-2026"
+    },
+    {
+      "name": "Federal Reserve FOMC Statement",
+      "use": "政策利率、声明措辞、投票分歧。",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260429a.htm"
+    },
+    {
+      "name": "U.S. Treasury Daily Rates",
+      "use": "收益率曲线、短端和长端利率。",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve"
+    },
+    {
+      "name": "SEC Press Releases",
+      "use": "证券监管、披露、执法和市场结构更新。",
+      "url": "https://www.sec.gov/newsroom/press-releases"
+    },
+    {
+      "name": "FINRA Asset Allocation and Diversification",
+      "use": "投资者教育、分散化、再平衡和风险提示。",
+      "url": "https://www.finra.org/investors/investing/investing-basics/asset-allocation-diversification"
+    },
+    {
+      "name": "SEC Investor.gov Asset Allocation Guide",
+      "use": "资产配置、分散化、共同基金和投资者教育。",
+      "url": "https://www.sec.gov/about/reports-publications/investorpubsassetallocationhtm"
+    },
+    {
+      "name": "IRS Topic 409",
+      "use": "资本利得和亏损基础规则。",
+      "url": "https://www.irs.gov/taxtopics/tc409"
+    },
+    {
+      "name": "TradingView Social Network",
+      "use": "社区图表、交易观点和脚本生态的产品模式。",
+      "url": "https://www.tradingview.com/social-network/"
+    },
+    {
+      "name": "Stocktwits About",
+      "use": "实时投资社交网络和情绪讨论模式。",
+      "url": "https://stocktwits.com/about/"
+    },
+    {
+      "name": "Seeking Alpha About",
+      "use": "投研内容、作者社区和订阅产品形态。",
+      "url": "https://about.seekingalpha.com/"
+    },
+    {
+      "name": "Vanguard Principles",
+      "use": "长期投资原则、计划、成本、纪律和分散化。",
+      "url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/how-we-invest/principles-for-investing-success.html"
+    }
+  ],
+  "updateDiagnostics": [
+    {
+      "source": "Federal Reserve Monetary Policy",
+      "status": "ok"
+    },
+    {
+      "source": "SEC Investor Alerts",
+      "status": "ok"
+    },
+    {
+      "source": "SEC Press Releases",
+      "status": "ok"
+    },
+    {
+      "source": "U.S. Treasury XML",
+      "status": "ok"
+    },
+    {
+      "source": "Stooq ETF CSV",
+      "status": "failed (No valid Stooq rows)"
+    },
+    {
+      "source": "CoinGecko crypto",
+      "status": "failed (fetch failed)"
+    }
+  ]
+}
