@@ -1,7 +1,7 @@
 {
   "asOf": {
-    "display": "2026/06/03 15:45",
-    "iso": "2026-06-03T07:45:51.919Z"
+    "display": "2026/06/03 15:58",
+    "iso": "2026-06-03T07:58:18.230Z"
   },
   "brief": {
     "title": "每日公开数据已更新，先看大A、人民币基金和国内平台",
@@ -66,18 +66,18 @@
     {
       "label": "Bitcoin",
       "shortLabel": "BTC",
-      "value": 67032,
+      "value": 67199,
       "unit": "",
-      "score": 33.32128736718638,
-      "note": "CoinGecko 24h -4.17%."
+      "score": 33.823562457618806,
+      "note": "CoinGecko 24h -4.04%."
     },
     {
       "label": "Ethereum",
       "shortLabel": "ETH",
-      "value": 1873.26,
+      "value": 1876.56,
       "unit": "",
-      "score": 28.72858743759643,
-      "note": "CoinGecko 24h -5.32%."
+      "score": 29.17370253302026,
+      "note": "CoinGecko 24h -5.21%."
     },
     {
       "label": "CPI YoY",
@@ -452,7 +452,7 @@
     },
     {
       "source": "CoinGecko crypto",
-      "status": "failed (fetch failed)"
+      "status": "ok"
     },
     {
       "source": "Eastmoney A-share indices",
@@ -982,20 +982,20 @@
           {
             "code": "00700",
             "name": "腾讯控股",
-            "changePct": -3.2,
-            "price": 466.2
+            "changePct": -3.16,
+            "price": 466.4
           },
           {
             "code": "09987",
             "name": "百胜中国",
-            "changePct": -3.02,
-            "price": 333.6
+            "changePct": -2.73,
+            "price": 334.6
           },
           {
             "code": "00883",
             "name": "中国海洋石油",
-            "changePct": -0.07,
-            "price": 27.34
+            "changePct": -0.51,
+            "price": 27.22
           }
         ],
         "lesson": "张坤代表性产品之一，适合学习高集中度消费和港股配置的波动。",
