@@ -1,7 +1,7 @@
 {
   "asOf": {
-    "display": "2026/06/03 14:52",
-    "iso": "2026-06-03T06:52:35.583Z"
+    "display": "2026/06/03 14:59",
+    "iso": "2026-06-03T06:59:13.336Z"
   },
   "brief": {
     "title": "每日公开数据已更新，先看利率、通胀和监管新闻",
@@ -66,18 +66,18 @@
     {
       "label": "Bitcoin",
       "shortLabel": "BTC",
-      "value": 67159,
+      "value": 66945,
       "unit": "",
-      "score": 32.52080933465049,
+      "score": 32.53986396126745,
       "note": "CoinGecko 24h -4.37%."
     },
     {
       "label": "Ethereum",
       "shortLabel": "ETH",
-      "value": 1871.16,
+      "value": 1869.84,
       "unit": "",
-      "score": 28.269380949194908,
-      "note": "CoinGecko 24h -5.43%."
+      "score": 27.97497783688778,
+      "note": "CoinGecko 24h -5.51%."
     },
     {
       "label": "CPI YoY",
@@ -452,7 +452,7 @@
     },
     {
       "source": "CoinGecko crypto",
-      "status": "failed (fetch failed)"
+      "status": "ok"
     },
     {
       "source": "SEC 13F public holdings",
