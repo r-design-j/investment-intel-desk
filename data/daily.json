@@ -1,7 +1,7 @@
 {
   "asOf": {
-    "display": "2026/06/03 09:43",
-    "iso": "2026-06-03T01:43:56.344Z"
+    "display": "2026/06/03 14:20",
+    "iso": "2026-06-03T06:20:39.813Z"
   },
   "brief": {
     "title": "每日公开数据已更新，先看利率、通胀和监管新闻",
@@ -62,6 +62,22 @@
       "unit": "%",
       "score": 79.52,
       "note": "U.S. Treasury latest 2026-06-02."
+    },
+    {
+      "label": "Bitcoin",
+      "shortLabel": "BTC",
+      "value": 67159,
+      "unit": "",
+      "score": 32.52080933465049,
+      "note": "CoinGecko 24h -4.37%."
+    },
+    {
+      "label": "Ethereum",
+      "shortLabel": "ETH",
+      "value": 1871.16,
+      "unit": "",
+      "score": 28.269380949194908,
+      "note": "CoinGecko 24h -5.43%."
     },
     {
       "label": "CPI YoY",
@@ -436,7 +452,7 @@
     },
     {
       "source": "CoinGecko crypto",
-      "status": "failed (fetch failed)"
+      "status": "ok"
     }
   ]
 }
