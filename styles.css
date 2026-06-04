@@ -483,6 +483,35 @@ main > section {
   width: 14px;
 }
 
+.daily-date-card {
+  align-items: center;
+  background: var(--surface);
+  border: 2px solid var(--black);
+  box-shadow: var(--shadow-hard);
+  display: inline-grid;
+  gap: 4px;
+  margin: 0 auto 22px;
+  min-width: min(440px, 100%);
+  padding: 14px 18px;
+}
+
+.daily-date-card span,
+.daily-date-card small {
+  color: var(--muted);
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.daily-date-card strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 30px;
+  line-height: 1.08;
+}
+
 .hero-summary {
   font-size: 25px;
   font-weight: 600;
@@ -589,7 +618,7 @@ main > section {
 .metrics-strip {
   display: grid;
   gap: 14px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   padding: 0 clamp(20px, 5vw, 76px) 72px;
 }
 
@@ -649,6 +678,25 @@ main > section {
   max-width: 620px;
 }
 
+.section-date {
+  align-items: center;
+  background: color-mix(in srgb, var(--blue) 26%, var(--surface));
+  border: 1px solid var(--black);
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--black);
+  color: var(--ink);
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 900;
+  justify-content: center;
+  line-height: 1.2;
+  margin: 16px auto 0;
+  max-width: 100%;
+  min-height: 30px;
+  padding: 7px 12px;
+  text-transform: none;
+}
+
 .section-title--split {
   align-items: end;
   display: flex;
@@ -663,6 +711,10 @@ main > section {
 .section-title--split > p {
   color: var(--ink-soft);
   max-width: 380px;
+}
+
+.section-title--split .section-date {
+  margin-left: 0;
 }
 
 .hand-label {

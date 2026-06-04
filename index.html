@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260603-cn-2">
+    <link rel="stylesheet" href="styles.css?v=20260604-date-1">
   </head>
   <body>
     <header class="site-header">
@@ -26,7 +26,7 @@
         <a class="nav-link" href="#news"><span class="nav-icon nav-icon--case" aria-hidden="true"></span>新闻</a>
       </nav>
       <div class="header-actions">
-        <span id="asOf" class="timestamp">加载中</span>
+        <span id="asOf" class="timestamp">每日数据日期：加载中</span>
         <button id="refreshButton" class="ghost-button" type="button" title="重新载入数据" aria-label="重新载入数据">
           <span aria-hidden="true">↻</span>
           <span>UPDATE</span>
@@ -53,6 +53,11 @@
           </div>
           <h1>国内投资情报<br>工作台</h1>
           <div class="availability"><i></i><span>DAILY PUBLIC MARKET BRIEF</span></div>
+          <div class="daily-date-card" aria-label="每日数据日期">
+            <span>每日数据日期</span>
+            <strong id="heroDataDate">加载中</strong>
+            <small id="heroDataFreshness">等待公开数据快照</small>
+          </div>
           <p id="briefText" class="hero-summary">正在载入公开市场数据和每日研究快照。</p>
           <div id="briefTags" class="tag-row"></div>
           <div class="hero-actions">
@@ -66,6 +71,10 @@
       </section>
 
       <section class="metrics-strip" aria-label="关键状态" data-od-id="metrics">
+        <div>
+          <span class="strip-label">Daily Data Date</span>
+          <strong id="stripDataDate">加载中</strong>
+        </div>
         <div>
           <span class="strip-label">Model Confidence</span>
           <strong id="confidenceBadge">置信度</strong>
@@ -89,6 +98,7 @@
         <div class="section-title">
           <p class="eyebrow selected-label">今天怎么看</p>
           <h2>先看大方向，再决定今天什么都不做、观察，还是复核仓位。</h2>
+          <p class="section-date" data-date-label>数据日期：加载中</p>
         </div>
         <div class="summary-grid">
           <article class="panel panel--lead tilt-card">
@@ -109,6 +119,7 @@
           <div>
             <p class="hand-label">for Chinese investors</p>
             <h2>大A观察</h2>
+            <p class="section-date" data-date-label>数据日期：加载中</p>
           </div>
           <p>A 股指数、人民币基金和国内基金经理公开季报单独成区，不再只看美股。</p>
         </div>
@@ -131,6 +142,7 @@
         <div class="section-title section-title--compact">
           <p class="hand-label">public fund reports</p>
           <h2>中国基金经理公开季报</h2>
+          <p class="section-date" data-date-label>数据日期：加载中</p>
           <p id="chinaFundNote">中国基金公开季报只用于学习，不能照抄买入。</p>
         </div>
         <div id="chinaFundGrid" class="china-fund-grid"></div>
@@ -141,6 +153,7 @@
           <div>
             <p class="hand-label">tomorrow and this week</p>
             <h2>明日预测 / 本周预测</h2>
+            <p class="section-date" data-date-label>数据日期：加载中</p>
           </div>
           <p>先讲中国市场的大方向，再把美股、利率、美元当外部变量；所有基金例子都不是个性化买卖指令。</p>
         </div>
@@ -152,6 +165,7 @@
           <div>
             <p class="hand-label">funds for beginners</p>
             <h2>基金观察池</h2>
+            <p class="section-date" data-date-label>数据日期：加载中</p>
           </div>
           <p>这里给具体基金/ETF 例子，但定位是学习和观察，不等于“现在买入”。</p>
         </div>
@@ -167,6 +181,7 @@
           <div>
             <p class="hand-label">china platforms and public portfolios</p>
             <h2>国内平台与实盘观察</h2>
+            <p class="section-date" data-date-label>数据日期：加载中</p>
           </div>
           <p>平台负责发现线索，大佬实盘负责学习方法，最终买卖仍要回到自己的风险承受力和官方披露。</p>
         </div>
@@ -212,6 +227,7 @@
           <div>
             <p class="hand-label">external variables</p>
             <h2>海外与宏观外部变量</h2>
+            <p class="section-date" data-date-label>数据日期：加载中</p>
           </div>
           <p>美债、通胀、政策和就业会影响全球风险偏好，但在本站里只是中国市场之外的辅助变量。</p>
         </div>
@@ -240,6 +256,7 @@
           <div>
             <p class="hand-label">facts and calendar</p>
             <h2>新闻与宏观日历</h2>
+            <p class="section-date" data-date-label>数据日期：加载中</p>
           </div>
           <div id="newsFilters" class="filter-row" aria-label="新闻分类筛选"></div>
         </div>
@@ -267,6 +284,7 @@
           <div>
             <p class="hand-label">learn one thing daily</p>
             <h2>小白每日一课</h2>
+            <p class="section-date" data-date-label>数据日期：加载中</p>
           </div>
           <p>每天补三张大白话知识卡，先弄懂概念，再看基金和预测。</p>
         </div>
@@ -278,6 +296,7 @@
           <div>
             <p class="hand-label">playground</p>
             <h2>投资知识地图</h2>
+            <p class="section-date" data-date-label>数据日期：加载中</p>
           </div>
           <p>每张卡只保留原则和检查点，避免把复杂决策伪装成简单答案。</p>
         </div>
@@ -289,6 +308,7 @@
           <div>
             <p class="hand-label">overseas filing, secondary</p>
             <h2>海外 13F 外部参考</h2>
+            <p class="section-date" data-date-label>数据日期：加载中</p>
           </div>
           <p id="guruPortfolioNote">海外 13F 有季度披露滞后，只作为外部学习样本，不放在本站主线。</p>
         </div>
@@ -300,6 +320,7 @@
           <div>
             <p class="hand-label">research notes</p>
             <h2>国内社区与产品套路</h2>
+            <p class="section-date" data-date-label>数据日期：加载中</p>
           </div>
           <p>国内平台热度只作为发现层，事实必须回到公告、基金季报、指数规则和可信新闻源。</p>
         </div>
@@ -311,6 +332,6 @@
       <p>本页面仅用于公开信息整理、教育和研究，不构成法律、税务、投资或财务建议。页面里的基金代码、预测和公开持仓仅作学习观察，不代表适合你购买。任何组合调整都应结合个人目标、期限、现金流、税务和风险承受能力，并咨询持牌专业人士。</p>
     </footer>
 
-    <script src="app.js?v=20260603-cn-2" type="module"></script>
+    <script src="app.js?v=20260604-date-1" type="module"></script>
   </body>
 </html>

@@ -30,6 +30,20 @@ const formatCny = (value) => {
   return `${number.toLocaleString("zh-CN", { maximumFractionDigits: 0 })}元`;
 };
 
+const formatDataTimestamp = (asOf = {}) => {
+  const raw = asOf.display || asOf.iso || "等待更新";
+  const normalized = String(raw)
+    .replace(/\//g, "-")
+    .replace("T", " ")
+    .replace(/\.\d{3}Z$/, " UTC")
+    .trim();
+  const day = normalized.match(/\d{4}-\d{2}-\d{2}/)?.[0] || normalized;
+  return {
+    day,
+    full: normalized
+  };
+};
+
 const toneClass = (tone) => {
   if (tone === "elevated") return "badge--warning";
   if (tone === "stress") return "badge--danger";
@@ -154,7 +168,7 @@ async function loadDaily() {
 
 function render() {
   const data = state.data;
-  el("#asOf").textContent = `As of ${data.asOf.display}`;
+  renderDataDate(data);
   el("#confidenceBadge").textContent = `置信度 ${data.brief.confidence}`;
   renderStripStatus(data);
   el("#briefText").textContent = data.brief.summary;
@@ -180,6 +194,25 @@ function render() {
   drawPulseChart(data.markets);
   scheduleHashSync();
   updateActiveNav();
+}
+
+function renderDataDate(data) {
+  const timestamp = formatDataTimestamp(data.asOf);
+  const setText = (selector, text) => {
+    const node = el(selector);
+    if (node) node.textContent = text;
+  };
+
+  setText("#asOf", `每日数据日期：${timestamp.full}`);
+  setText("#heroDataDate", timestamp.full);
+  setText("#stripDataDate", timestamp.day);
+  setText("#heroDataFreshness", timestamp.day === "等待更新"
+    ? "等待公开数据快照"
+    : `当前页面展示的是 ${timestamp.day} 快照`);
+
+  document.querySelectorAll("[data-date-label]").forEach((node) => {
+    node.textContent = `数据日期：${timestamp.full}`;
+  });
 }
 
 function renderTags(selector, tags) {
