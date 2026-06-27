@@ -1,7 +1,7 @@
 {
   "asOf": {
-    "display": "2026/06/27 07:41",
-    "iso": "2026-06-26T23:41:40.471Z"
+    "display": "2026/06/28 07:33",
+    "iso": "2026-06-27T23:33:32.141Z"
   },
   "brief": {
     "title": "每日公开数据已更新，先看大A、人民币基金和国内平台",
@@ -66,18 +66,18 @@
     {
       "label": "Bitcoin",
       "shortLabel": "BTC",
-      "value": 59955,
+      "value": 59891,
       "unit": "",
-      "score": 50.303785028007496,
-      "note": "CoinGecko 24h 0.08%."
+      "score": 49.87301652527405,
+      "note": "CoinGecko 24h -0.03%."
     },
     {
       "label": "Ethereum",
       "shortLabel": "ETH",
-      "value": 1575.33,
+      "value": 1570.29,
       "unit": "",
-      "score": 51.08719268819388,
-      "note": "CoinGecko 24h 0.27%."
+      "score": 49.01621606057212,
+      "note": "CoinGecko 24h -0.25%."
     },
     {
       "label": "CPI YoY",
@@ -168,10 +168,10 @@
       "url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/updated-2"
     },
     {
-      "title": "Updated Investor Alert: Identity Theft, Data Breaches and Your Investment Accounts",
+      "title": "Updated Investor Alert: Don’t get “-ished” – Tips to Protect Your Investment and Financial Accounts from Phishing, Smishing, and Vishing Scams",
       "category": "Regulation",
       "impact": "投资者保护信息提示需要先验证平台、人员资质和资金流向。",
-      "url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/investor-59"
+      "url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/updated-investor-alert-dont-get-ished-tips-protect-your-investment-and-financial-accounts-phishing"
     },
     {
       "title": "SEC, CFTC Seek Public Comment on the Harmonization of Portfolio Margining Frameworks",
@@ -184,6 +184,12 @@
       "category": "Regulation",
       "impact": "纳入每日新闻队列，作为事实输入而非直接交易信号。",
       "url": "https://www.sec.gov/newsroom/press-releases/2026-58-sec-appoints-kathleen-hutchinson-director-office-international-affairs"
+    },
+    {
+      "title": "Updated Investor Alert: Identity Theft, Data Breaches and Your Investment Accounts",
+      "category": "Regulation",
+      "impact": "投资者保护信息提示需要先验证平台、人员资质和资金流向。",
+      "url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/investor-59"
     },
     {
       "title": "SEC, CFTC Seek Public Comment to Further Clarify and Harmonize Derivatives Product Definitions",
@@ -202,12 +208,6 @@
       "category": "Regulation",
       "impact": "纳入每日新闻队列，作为事实输入而非直接交易信号。",
       "url": "https://www.sec.gov/newsroom/press-releases/2026-55-sec-appoints-john-moses-director-office-investor-education-assistance"
-    },
-    {
-      "title": "SEC Proposes Rescission of Regulation NMS Rules 611 and 610(e)",
-      "category": "Regulation",
-      "impact": "纳入每日新闻队列，作为事实输入而非直接交易信号。",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-54-sec-proposes-rescission-regulation-nms-rules-611-610e"
     }
   ],
   "calendar": [
@@ -468,7 +468,7 @@
     },
     {
       "source": "Eastmoney A-share indices",
-      "status": "ok"
+      "status": "failed (fetch failed)"
     },
     {
       "source": "Eastmoney China fund public holdings",
@@ -481,12 +481,6 @@
   ],
   "beginnerLessons": [
     {
-      "title": "宽基基金适合做核心仓",
-      "plain": "宽基基金买的是一整个市场或一大批公司，不押单一公司，适合新手做长期学习对象。",
-      "example": "国内常见观察样例包括沪深300 ETF、中证A500 ETF、中证500 ETF；海外可以把 VOO/SPY 当外部学习样本。",
-      "todayCheck": "先比较费用率、跟踪指数、规模、成交活跃度和持仓分散度，不要只看最近涨幅。"
-    },
-    {
       "title": "债券基金也会亏",
       "plain": "债券基金不是存款。利率上升时，长久期债券基金价格可能下跌。",
       "example": "短债通常波动较低，长债对利率更敏感；TLT 这类长债 ETF 波动可能很大。",
@@ -497,6 +491,12 @@
       "plain": "定投可以降低择时压力，但如果买错资产、仓位过大或期限太短，仍然可能亏钱。",
       "example": "长期宽基定投和短线追热点基金不是一回事。",
       "todayCheck": "定投前先设上限：每月多少钱、投多久、什么条件下停止复盘。"
+    },
+    {
+      "title": "费用率会慢慢吃掉收益",
+      "plain": "同样跟踪一个指数，费用越低，长期留下来的收益通常越多。",
+      "example": "指数基金常见费用率差异看起来只有零点几，但十年二十年会拉开差距。",
+      "todayCheck": "同类基金先比较费用率、规模、流动性、跟踪误差。"
     }
   ],
   "forecasts": {
@@ -963,7 +963,7 @@
           "杨思亮",
           "何一铖"
         ],
-        "managerSummary": "张坤 · 13年又275天",
+        "managerSummary": "张坤 · 13年又276天",
         "fundSize": "416.72亿(4只基金)",
         "returns": {
           "oneMonth": "-7.08",
@@ -1020,7 +1020,7 @@
         "managerNames": [
           "朱少醒"
         ],
-        "managerSummary": "朱少醒 · 20年又228天",
+        "managerSummary": "朱少醒 · 20年又229天",
         "fundSize": "197.39亿(3只基金)",
         "returns": {
           "oneMonth": "-0.84",
@@ -1078,7 +1078,7 @@
           "葛兰",
           "赵磊"
         ],
-        "managerSummary": "葛兰 · 10年又357天",
+        "managerSummary": "葛兰 · 10年又358天",
         "fundSize": "321.97亿(4只基金)",
         "returns": {
           "oneMonth": "4.08",
@@ -1135,7 +1135,7 @@
         "managerNames": [
           "刘彦春"
         ],
-        "managerSummary": "刘彦春 · 17年又61天",
+        "managerSummary": "刘彦春 · 17年又62天",
         "fundSize": "265.50亿(11只基金)",
         "returns": {
           "oneMonth": "-4.31",
@@ -1192,7 +1192,7 @@
         "managerNames": [
           "谢治宇"
         ],
-        "managerSummary": "谢治宇 · 13年又152天",
+        "managerSummary": "谢治宇 · 13年又153天",
         "fundSize": "345.19亿(5只基金)",
         "returns": {
           "oneMonth": "6.87",
