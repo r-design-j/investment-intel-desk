@@ -1,7 +1,7 @@
 {
   "asOf": {
-    "display": "2026/07/05 07:29",
-    "iso": "2026-07-04T23:29:24.260Z"
+    "display": "2026/07/06 07:34",
+    "iso": "2026-07-05T23:34:08.131Z"
   },
   "brief": {
     "title": "每日公开数据已更新，先看大A、人民币基金和国内平台",
@@ -66,18 +66,18 @@
     {
       "label": "Bitcoin",
       "shortLabel": "BTC",
-      "value": 63035,
+      "value": 63603,
       "unit": "",
-      "score": 53.154704418747784,
-      "note": "CoinGecko 24h 0.79%."
+      "score": 53.30654895049888,
+      "note": "CoinGecko 24h 0.83%."
     },
     {
       "label": "Ethereum",
       "shortLabel": "ETH",
-      "value": 1776.76,
+      "value": 1789.99,
       "unit": "",
-      "score": 54.649229592129416,
-      "note": "CoinGecko 24h 1.16%."
+      "score": 52.5787167893329,
+      "note": "CoinGecko 24h 0.64%."
     },
     {
       "label": "CPI YoY",
@@ -468,7 +468,7 @@
     },
     {
       "source": "Eastmoney A-share indices",
-      "status": "ok"
+      "status": "failed (502 Bad Gateway)"
     },
     {
       "source": "Eastmoney China fund public holdings",
@@ -481,12 +481,6 @@
   ],
   "beginnerLessons": [
     {
-      "title": "债券基金也会亏",
-      "plain": "债券基金不是存款。利率上升时，长久期债券基金价格可能下跌。",
-      "example": "短债通常波动较低，长债对利率更敏感；TLT 这类长债 ETF 波动可能很大。",
-      "todayCheck": "看到债券基金前，先看久期、信用质量和你是否能承受净值波动。"
-    },
-    {
       "title": "定投解决不了所有问题",
       "plain": "定投可以降低择时压力，但如果买错资产、仓位过大或期限太短，仍然可能亏钱。",
       "example": "长期宽基定投和短线追热点基金不是一回事。",
@@ -497,6 +491,12 @@
       "plain": "同样跟踪一个指数，费用越低，长期留下来的收益通常越多。",
       "example": "指数基金常见费用率差异看起来只有零点几，但十年二十年会拉开差距。",
       "todayCheck": "同类基金先比较费用率、规模、流动性、跟踪误差。"
+    },
+    {
+      "title": "不要跟着别人实盘无脑买",
+      "plain": "雪球、蛋卷、且慢等平台上的公开组合和实盘通常有延迟，而且对方的资金量、期限和风险承受力都与你不同。",
+      "example": "看到大佬买入某个行业基金，先问它在组合里承担什么角色，而不是照着买。",
+      "todayCheck": "看公开实盘只问：这个方向说明了什么？能不能用宽基、分批或低风险方式表达？"
     }
   ],
   "forecasts": {
