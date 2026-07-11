@@ -1,7 +1,7 @@
 {
   "asOf": {
-    "display": "2026/07/11 07:26",
-    "iso": "2026-07-10T23:26:46.285Z"
+    "display": "2026/07/12 07:23",
+    "iso": "2026-07-11T23:23:56.960Z"
   },
   "brief": {
     "title": "每日公开数据已更新，先看大A、人民币基金和国内平台",
@@ -66,18 +66,18 @@
     {
       "label": "Bitcoin",
       "shortLabel": "BTC",
-      "value": 64113,
+      "value": 64005,
       "unit": "",
-      "score": 55.677528434143234,
-      "note": "CoinGecko 24h 1.42%."
+      "score": 49.54604122041439,
+      "note": "CoinGecko 24h -0.11%."
     },
     {
       "label": "Ethereum",
       "shortLabel": "ETH",
-      "value": 1795.25,
+      "value": 1803.36,
       "unit": "",
-      "score": 61.37094124118397,
-      "note": "CoinGecko 24h 2.84%."
+      "score": 52.02225061345708,
+      "note": "CoinGecko 24h 0.51%."
     },
     {
       "label": "CPI YoY",
@@ -468,7 +468,7 @@
     },
     {
       "source": "Eastmoney A-share indices",
-      "status": "ok"
+      "status": "failed (502 Bad Gateway)"
     },
     {
       "source": "Eastmoney China fund public holdings",
@@ -481,12 +481,6 @@
   ],
   "beginnerLessons": [
     {
-      "title": "宽基基金适合做核心仓",
-      "plain": "宽基基金买的是一整个市场或一大批公司，不押单一公司，适合新手做长期学习对象。",
-      "example": "国内常见观察样例包括沪深300 ETF、中证A500 ETF、中证500 ETF；海外可以把 VOO/SPY 当外部学习样本。",
-      "todayCheck": "先比较费用率、跟踪指数、规模、成交活跃度和持仓分散度，不要只看最近涨幅。"
-    },
-    {
       "title": "债券基金也会亏",
       "plain": "债券基金不是存款。利率上升时，长久期债券基金价格可能下跌。",
       "example": "短债通常波动较低，长债对利率更敏感；TLT 这类长债 ETF 波动可能很大。",
@@ -497,6 +491,12 @@
       "plain": "定投可以降低择时压力，但如果买错资产、仓位过大或期限太短，仍然可能亏钱。",
       "example": "长期宽基定投和短线追热点基金不是一回事。",
       "todayCheck": "定投前先设上限：每月多少钱、投多久、什么条件下停止复盘。"
+    },
+    {
+      "title": "费用率会慢慢吃掉收益",
+      "plain": "同样跟踪一个指数，费用越低，长期留下来的收益通常越多。",
+      "example": "指数基金常见费用率差异看起来只有零点几，但十年二十年会拉开差距。",
+      "todayCheck": "同类基金先比较费用率、规模、流动性、跟踪误差。"
     }
   ],
   "forecasts": {
