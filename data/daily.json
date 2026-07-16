@@ -1,11 +1,11 @@
 {
   "asOf": {
-    "display": "2026/07/16 07:26",
-    "iso": "2026-07-15T23:26:58.413Z"
+    "display": "2026/07/17 07:23",
+    "iso": "2026-07-16T23:23:09.146Z"
   },
   "brief": {
     "title": "每日公开数据已更新，先看大A、人民币基金和国内平台",
-    "summary": "A 股快照：上证 3955.58（-0.29%），沪深300 -0.20%；偏震荡，别用一天涨跌判断趋势 海外外部变量：10 年期美债约 4.55%。 本页面只输出公开信息整理、学习框架和非个性化行动清单。",
+    "summary": "A 股快照：上证 3882.41（-1.85%），沪深300 -1.85%；偏震荡，别用一天涨跌判断趋势 海外外部变量：10 年期美债约 4.57%。 本页面只输出公开信息整理、学习框架和非个性化行动清单。",
     "confidence": "中等",
     "tags": [
       "大A优先",
@@ -34,50 +34,50 @@
     {
       "label": "3M Treasury",
       "shortLabel": "3M",
-      "value": 3.83,
+      "value": 3.84,
       "unit": "%",
-      "score": 61.28,
-      "note": "U.S. Treasury latest 2026-07-15."
+      "score": 61.44,
+      "note": "U.S. Treasury latest 2026-07-16."
     },
     {
       "label": "2Y Treasury",
       "shortLabel": "2Y",
-      "value": 4.13,
+      "value": 4.16,
       "unit": "%",
-      "score": 66.08,
-      "note": "U.S. Treasury latest 2026-07-15."
+      "score": 66.56,
+      "note": "U.S. Treasury latest 2026-07-16."
     },
     {
       "label": "10Y Treasury",
       "shortLabel": "10Y",
-      "value": 4.55,
+      "value": 4.57,
       "unit": "%",
-      "score": 72.8,
-      "note": "U.S. Treasury latest 2026-07-15."
+      "score": 73.12,
+      "note": "U.S. Treasury latest 2026-07-16."
     },
     {
       "label": "30Y Treasury",
       "shortLabel": "30Y",
-      "value": 5.08,
+      "value": 5.09,
       "unit": "%",
-      "score": 81.28,
-      "note": "U.S. Treasury latest 2026-07-15."
+      "score": 81.44,
+      "note": "U.S. Treasury latest 2026-07-16."
     },
     {
       "label": "Bitcoin",
       "shortLabel": "BTC",
-      "value": 64819,
+      "value": 63809,
       "unit": "",
-      "score": 49.80071013130043,
-      "note": "CoinGecko 24h -0.05%."
+      "score": 43.625628589229215,
+      "note": "CoinGecko 24h -1.59%."
     },
     {
       "label": "Ethereum",
       "shortLabel": "ETH",
-      "value": 1921.43,
+      "value": 1861.98,
       "unit": "",
-      "score": 58.06597517925593,
-      "note": "CoinGecko 24h 2.02%."
+      "score": 37.42000289544333,
+      "note": "CoinGecko 24h -3.14%."
     },
     {
       "label": "CPI YoY",
@@ -174,6 +174,12 @@
       "url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/updated-investor-alert-dont-get-ished-tips-protect-your-investment-and-financial-accounts-phishing"
     },
     {
+      "title": "SEC Proposes New E-Delivery Approach to Make Information More Readily Accessible and Useful for Investors",
+      "category": "Regulation",
+      "impact": "纳入每日新闻队列，作为事实输入而非直接交易信号。",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-67-sec-proposes-new-e-delivery-approach-make-information-more-readily-accessible-useful-investors"
+    },
+    {
       "title": "SEC Office of Municipal Securities Updates FAQs for Registration of Municipal Advisors",
       "category": "Regulation",
       "impact": "纳入每日新闻队列，作为事实输入而非直接交易信号。",
@@ -202,12 +208,6 @@
       "category": "Policy",
       "impact": "政策利率和声明措辞会影响股债估值、美元和现金收益率。",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm"
-    },
-    {
-      "title": "Federal Reserve Board and Federal Open Market Committee release economic projections from the June 16-17 FOMC meeting",
-      "category": "Policy",
-      "impact": "政策利率和声明措辞会影响股债估值、美元和现金收益率。",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617b.htm"
     }
   ],
   "calendar": [
@@ -481,12 +481,6 @@
   ],
   "beginnerLessons": [
     {
-      "title": "基金不是稳赚账户",
-      "plain": "基金是把很多人的钱交给一个产品去买股票、债券、现金工具或其它资产。它会涨也会跌，风险来自底层资产。",
-      "example": "股票基金像一篮子股票，债券基金像一篮子债券，货币基金更接近现金管理工具。",
-      "todayCheck": "买之前先问：这只基金主要买什么？最差可能跌多少？我多久不用这笔钱？"
-    },
-    {
       "title": "新手先分清三笔钱",
       "plain": "短期要用的钱不应该放进高波动资产；长期不用的钱才适合承受股票基金波动。",
       "example": "房租、生活费和 3-12 个月应急金先放现金桶；5 年以上长期资金再考虑权益基金。",
@@ -497,6 +491,12 @@
       "plain": "宽基基金买的是一整个市场或一大批公司，不押单一公司，适合新手做长期学习对象。",
       "example": "国内常见观察样例包括沪深300 ETF、中证A500 ETF、中证500 ETF；海外可以把 VOO/SPY 当外部学习样本。",
       "todayCheck": "先比较费用率、跟踪指数、规模、成交活跃度和持仓分散度，不要只看最近涨幅。"
+    },
+    {
+      "title": "债券基金也会亏",
+      "plain": "债券基金不是存款。利率上升时，长久期债券基金价格可能下跌。",
+      "example": "短债通常波动较低，长债对利率更敏感；TLT 这类长债 ETF 波动可能很大。",
+      "todayCheck": "看到债券基金前，先看久期、信用质量和你是否能承受净值波动。"
     }
   ],
   "forecasts": {
@@ -506,12 +506,12 @@
       "confidence": "中等偏低",
       "thesis": "如果大盘指数上涨但成交和行业扩散不足，短线更像情绪修复，不等于趋势确认。",
       "watch": [
-        "上证指数是否站稳 3956 附近",
-        "沪深300涨跌幅 -0.20%，观察核心资产是否跟上",
+        "上证指数是否站稳 3882 附近",
+        "沪深300涨跌幅 -1.85%，观察核心资产是否跟上",
         "外部变量：2026-06-03 ISM Services PMI",
-        "上证指数 3955.58，明日看是否能守住关键整数位",
-        "沪深300今日涨跌 -0.20%，看核心资产是否同步",
-        "外部变量：10 年期美债约 4.55%"
+        "上证指数 3882.41，明日看是否能守住关键整数位",
+        "沪深300今日涨跌 -1.85%，看核心资产是否同步",
+        "外部变量：10 年期美债约 4.57%"
       ],
       "noviceMove": "新手明日只适合观察或小额分批，不因单日红绿改变长期仓位。"
     },
@@ -554,7 +554,7 @@
       "suitableFor": "3-12 个月内可能要用的钱、应急金、暂时不想承受股票波动的资金。",
       "buyGuidance": "新手先把现金桶补足，再考虑风险资产；货币基金和短债收益会随市场利率变化。",
       "risk": "不是银行存款；仍有流动性、信用、净值波动和再投资风险。",
-      "currentRead": "当前 10 年期美债约 4.55%，债券和成长资产都要看利率变化。"
+      "currentRead": "当前 10 年期美债约 4.57%，债券和成长资产都要看利率变化。"
     },
     {
       "bucket": "A股宽基核心",
@@ -645,7 +645,7 @@
       "suitableFor": "不想全仓股票、需要组合稳定性的投资者。",
       "buyGuidance": "利率仍高时优先看久期；不理解久期前别重仓长债。",
       "risk": "利率上升会压低债券基金净值，信用风险也会影响价格。",
-      "currentRead": "当前 10 年期美债约 4.55%，债券和成长资产都要看利率变化。"
+      "currentRead": "当前 10 年期美债约 4.57%，债券和成长资产都要看利率变化。"
     },
     {
       "bucket": "黄金/抗通胀观察",
@@ -854,73 +854,73 @@
     {
       "label": "上证指数",
       "shortLabel": "上证",
-      "value": 3955.58,
+      "value": 3882.41,
       "unit": "",
-      "changePct": -0.29,
-      "change": -11.55,
-      "turnoverCny": 1226298269897.2,
-      "score": 46.52,
-      "note": "东方财富快照，涨跌幅 -0.29%。",
+      "changePct": -1.85,
+      "change": -73.17,
+      "turnoverCny": 1124208166213.8,
+      "score": 27.799999999999997,
+      "note": "东方财富快照，涨跌幅 -1.85%。",
       "sourceUrl": "https://quote.eastmoney.com/center/gridlist.html#index_sh"
     },
     {
       "label": "深证成指",
       "shortLabel": "深成",
-      "value": 14779.4,
+      "value": 14488.65,
       "unit": "",
-      "changePct": -0.97,
-      "change": -145.47,
-      "turnoverCny": 1344855609775.95,
-      "score": 38.36,
-      "note": "东方财富快照，涨跌幅 -0.97%。",
+      "changePct": -1.97,
+      "change": -290.75,
+      "turnoverCny": 1279356962406.609,
+      "score": 26.36,
+      "note": "东方财富快照，涨跌幅 -1.97%。",
       "sourceUrl": "https://quote.eastmoney.com/center/gridlist.html#index_sh"
     },
     {
       "label": "创业板指",
       "shortLabel": "创业板",
-      "value": 3804.7,
+      "value": 3692.46,
       "unit": "",
-      "changePct": -1.21,
-      "change": -46.44,
-      "turnoverCny": 596004738208.77,
-      "score": 35.480000000000004,
-      "note": "东方财富快照，涨跌幅 -1.21%。",
+      "changePct": -2.95,
+      "change": -112.24,
+      "turnoverCny": 580714563458.11,
+      "score": 14.599999999999994,
+      "note": "东方财富快照，涨跌幅 -2.95%。",
       "sourceUrl": "https://quote.eastmoney.com/center/gridlist.html#index_sh"
     },
     {
       "label": "沪深300",
       "shortLabel": "沪深300",
-      "value": 4786.78,
+      "value": 4698.43,
       "unit": "",
-      "changePct": -0.2,
-      "change": -9.72,
-      "turnoverCny": 858314510331.8,
-      "score": 47.6,
-      "note": "东方财富快照，涨跌幅 -0.20%。",
+      "changePct": -1.85,
+      "change": -88.35,
+      "turnoverCny": 798830386821.1,
+      "score": 27.799999999999997,
+      "note": "东方财富快照，涨跌幅 -1.85%。",
       "sourceUrl": "https://quote.eastmoney.com/center/gridlist.html#index_sh"
     },
     {
       "label": "中证500",
       "shortLabel": "中证500",
-      "value": 8147.58,
+      "value": 7955.66,
       "unit": "",
-      "changePct": -1.55,
-      "change": -128.36,
-      "turnoverCny": 512588772725.3,
-      "score": 31.4,
-      "note": "东方财富快照，涨跌幅 -1.55%。",
+      "changePct": -2.36,
+      "change": -191.92,
+      "turnoverCny": 474607241054.8,
+      "score": 21.68,
+      "note": "东方财富快照，涨跌幅 -2.36%。",
       "sourceUrl": "https://quote.eastmoney.com/center/gridlist.html#index_sh"
     },
     {
       "label": "科创50",
       "shortLabel": "科创50",
-      "value": 1924.27,
+      "value": 1846.88,
       "unit": "",
-      "changePct": -4.25,
-      "change": -85.46,
-      "turnoverCny": 169644623956,
-      "score": 0,
-      "note": "东方财富快照，涨跌幅 -4.25%。",
+      "changePct": -4.02,
+      "change": -77.39,
+      "turnoverCny": 174820562239,
+      "score": 1.7600000000000051,
+      "note": "东方财富快照，涨跌幅 -4.02%。",
       "sourceUrl": "https://quote.eastmoney.com/center/gridlist.html#index_sh"
     }
   ],
@@ -931,8 +931,8 @@
       "confidence": "中等偏低",
       "thesis": "如果大盘指数上涨但成交和行业扩散不足，短线更像情绪修复，不等于趋势确认。",
       "watch": [
-        "上证指数是否站稳 3956 附近",
-        "沪深300涨跌幅 -0.20%，观察核心资产是否跟上",
+        "上证指数是否站稳 3882 附近",
+        "沪深300涨跌幅 -1.85%，观察核心资产是否跟上",
         "外部变量：2026-06-03 ISM Services PMI"
       ],
       "noviceMove": "新手明日不要追单日强势行业，先确认自己是做长期配置还是短线交易。"
@@ -963,7 +963,7 @@
           "杨思亮",
           "何一铖"
         ],
-        "managerSummary": "张坤 · 13年又294天",
+        "managerSummary": "张坤 · 13年又295天",
         "fundSize": "416.72亿(4只基金)",
         "returns": {
           "oneMonth": "-1.52",
@@ -976,38 +976,38 @@
           {
             "code": "600519",
             "name": "贵州茅台",
-            "changePct": 2.98,
-            "price": 1251.06
+            "changePct": 0.63,
+            "price": 1258.99
           },
           {
             "code": "000858",
             "name": "五 粮 液",
-            "changePct": 4.09,
-            "price": 76.4
+            "changePct": 0.11,
+            "price": 73.9
           },
           {
             "code": "000568",
             "name": "泸州老窖",
-            "changePct": 7.04,
-            "price": 83.12
+            "changePct": 1.28,
+            "price": 84.18
           },
           {
             "code": "00700",
             "name": "腾讯控股",
-            "changePct": 3.9,
-            "price": 474
+            "changePct": 2.11,
+            "price": 484
           },
           {
             "code": "09987",
             "name": "百胜中国",
-            "changePct": -2,
-            "price": 343.4
+            "changePct": 1.05,
+            "price": 347
           },
           {
             "code": "00883",
             "name": "中国海洋石油",
-            "changePct": 0.44,
-            "price": 22.9
+            "changePct": -0.09,
+            "price": 22.88
           }
         ],
         "lesson": "张坤代表性产品之一，适合学习高集中度消费和港股配置的波动。",
@@ -1020,7 +1020,7 @@
         "managerNames": [
           "朱少醒"
         ],
-        "managerSummary": "朱少醒 · 20年又247天",
+        "managerSummary": "朱少醒 · 20年又248天",
         "fundSize": "197.39亿(3只基金)",
         "returns": {
           "oneMonth": "0.24",
@@ -1028,43 +1028,43 @@
           "sixMonth": "4.81",
           "oneYear": "27.21"
         },
-        "stockPosition": 85.62,
+        "stockPosition": 80.33,
         "holdings": [
           {
             "code": "002142",
             "name": "宁波银行",
-            "changePct": 1.34,
-            "price": 32.48
+            "changePct": -0.95,
+            "price": 31.28
           },
           {
             "code": "002353",
             "name": "杰瑞股份",
-            "changePct": -7.04,
-            "price": 134.55
+            "changePct": -3.01,
+            "price": 130.5
           },
           {
             "code": "300750",
             "name": "宁德时代",
-            "changePct": 2.47,
-            "price": 373
+            "changePct": -1.82,
+            "price": 366.2
           },
           {
             "code": "603129",
             "name": "春风动力",
-            "changePct": 1.17,
-            "price": 270.76
+            "changePct": 1.67,
+            "price": 275.29
           },
           {
             "code": "000425",
             "name": "徐工机械",
-            "changePct": 2.07,
-            "price": 8.39
+            "changePct": 0.95,
+            "price": 8.47
           },
           {
             "code": "601899",
             "name": "紫金矿业",
-            "changePct": -0.79,
-            "price": 28.83
+            "changePct": 1.46,
+            "price": 29.25
           }
         ],
         "lesson": "朱少醒长期管理产品，适合学习长期主动基金和风格稳定性。",
@@ -1078,7 +1078,7 @@
           "葛兰",
           "赵磊"
         ],
-        "managerSummary": "葛兰 · 11年又11天",
+        "managerSummary": "葛兰 · 11年又12天",
         "fundSize": "321.97亿(4只基金)",
         "returns": {
           "oneMonth": "35.37",
@@ -1091,38 +1091,38 @@
           {
             "code": "603259",
             "name": "药明康德",
-            "changePct": 3.13,
-            "price": 131.5
+            "changePct": -3.42,
+            "price": 127
           },
           {
             "code": "600276",
             "name": "恒瑞医药",
-            "changePct": 4.89,
-            "price": 57.5
+            "changePct": -2.63,
+            "price": 55.99
           },
           {
             "code": "300759",
             "name": "康龙化成",
-            "changePct": 9.13,
-            "price": 40.3
+            "changePct": -4.22,
+            "price": 38.6
           },
           {
             "code": "002821",
             "name": "凯莱英",
-            "changePct": 10,
-            "price": 195.75
+            "changePct": -8.05,
+            "price": 179.99
           },
           {
             "code": "002653",
             "name": "海思科",
-            "changePct": 9.45,
-            "price": 74.13
+            "changePct": 6.83,
+            "price": 79.19
           },
           {
             "code": "688506",
             "name": "百利天恒",
-            "changePct": 9.69,
-            "price": 333.58
+            "changePct": -0.22,
+            "price": 332.83
           }
         ],
         "lesson": "葛兰代表性医药基金，适合学习主题基金的高波动和行业周期。",
@@ -1135,7 +1135,7 @@
         "managerNames": [
           "刘彦春"
         ],
-        "managerSummary": "刘彦春 · 17年又80天",
+        "managerSummary": "刘彦春 · 17年又81天",
         "fundSize": "265.50亿(11只基金)",
         "returns": {
           "oneMonth": "3.23",
@@ -1148,38 +1148,38 @@
           {
             "code": "600519",
             "name": "贵州茅台",
-            "changePct": 2.98,
-            "price": 1251.06
+            "changePct": 0.63,
+            "price": 1258.99
           },
           {
             "code": "002311",
             "name": "海大集团",
-            "changePct": 3.61,
-            "price": 46.51
+            "changePct": 3.03,
+            "price": 47.92
           },
           {
             "code": "000333",
             "name": "美的集团",
-            "changePct": 1.84,
-            "price": 82.67
+            "changePct": -1.05,
+            "price": 81.8
           },
           {
             "code": "603259",
             "name": "药明康德",
-            "changePct": 3.13,
-            "price": 131.5
+            "changePct": -3.42,
+            "price": 127
           },
           {
             "code": "601888",
             "name": "中国中免",
-            "changePct": 6.85,
-            "price": 54.41
+            "changePct": 0.2,
+            "price": 54.52
           },
           {
             "code": "600809",
             "name": "山西汾酒",
-            "changePct": 7.01,
-            "price": 118.25
+            "changePct": 0.76,
+            "price": 119.15
           }
         ],
         "lesson": "刘彦春代表性产品，适合观察消费成长风格的回撤和修复。",
@@ -1192,7 +1192,7 @@
         "managerNames": [
           "谢治宇"
         ],
-        "managerSummary": "谢治宇 · 13年又171天",
+        "managerSummary": "谢治宇 · 13年又172天",
         "fundSize": "345.19亿(5只基金)",
         "returns": {
           "oneMonth": "2.06",
@@ -1205,38 +1205,38 @@
           {
             "code": "600160",
             "name": "巨化股份",
-            "changePct": -1.52,
-            "price": 42.2
+            "changePct": -5.26,
+            "price": 39.98
           },
           {
             "code": "688099",
             "name": "晶晨股份",
-            "changePct": -1.89,
-            "price": 96.42
+            "changePct": 1.63,
+            "price": 97.99
           },
           {
             "code": "300308",
             "name": "中际旭创",
-            "changePct": -1.24,
-            "price": 1169.31
+            "changePct": -4.82,
+            "price": 1113
           },
           {
             "code": "300750",
             "name": "宁德时代",
-            "changePct": 2.47,
-            "price": 373
+            "changePct": -1.82,
+            "price": 366.2
           },
           {
             "code": "688120",
             "name": "华海清科",
-            "changePct": -6.16,
-            "price": 289.98
+            "changePct": -10.88,
+            "price": 258.43
           },
           {
             "code": "605117",
             "name": "德业股份",
-            "changePct": -0.35,
-            "price": 85.4
+            "changePct": -3.26,
+            "price": 82.62
           }
         ],
         "lesson": "兴全合润适合观察均衡成长型主动基金的持仓变化。",
