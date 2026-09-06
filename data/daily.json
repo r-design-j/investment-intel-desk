@@ -1,7 +1,7 @@
 {
   "asOf": {
-    "display": "2026/09/05 08:14",
-    "iso": "2026-09-05T00:14:01.277Z"
+    "display": "2026/09/06 08:04",
+    "iso": "2026-09-06T00:04:54.888Z"
   },
   "brief": {
     "title": "每日公开数据已更新，先看大A、人民币基金和国内平台",
@@ -66,18 +66,18 @@
     {
       "label": "Bitcoin",
       "shortLabel": "BTC",
-      "value": 79710,
+      "value": 79825,
       "unit": "",
-      "score": 42.62237192536875,
-      "note": "CoinGecko 24h -1.84%."
+      "score": 50.840343411744946,
+      "note": "CoinGecko 24h 0.21%."
     },
     {
       "label": "Ethereum",
       "shortLabel": "ETH",
-      "value": 2456.15,
+      "value": 2480.05,
       "unit": "",
-      "score": 41.889415475963716,
-      "note": "CoinGecko 24h -2.03%."
+      "score": 54.01614565889633,
+      "note": "CoinGecko 24h 1.00%."
     },
     {
       "label": "CPI YoY",
@@ -481,12 +481,6 @@
   ],
   "beginnerLessons": [
     {
-      "title": "债券基金也会亏",
-      "plain": "债券基金不是存款。利率上升时，长久期债券基金价格可能下跌。",
-      "example": "短债通常波动较低，长债对利率更敏感；TLT 这类长债 ETF 波动可能很大。",
-      "todayCheck": "看到债券基金前，先看久期、信用质量和你是否能承受净值波动。"
-    },
-    {
       "title": "定投解决不了所有问题",
       "plain": "定投可以降低择时压力，但如果买错资产、仓位过大或期限太短，仍然可能亏钱。",
       "example": "长期宽基定投和短线追热点基金不是一回事。",
@@ -497,6 +491,12 @@
       "plain": "同样跟踪一个指数，费用越低，长期留下来的收益通常越多。",
       "example": "指数基金常见费用率差异看起来只有零点几，但十年二十年会拉开差距。",
       "todayCheck": "同类基金先比较费用率、规模、流动性、跟踪误差。"
+    },
+    {
+      "title": "不要跟着别人实盘无脑买",
+      "plain": "雪球、蛋卷、且慢等平台上的公开组合和实盘通常有延迟，而且对方的资金量、期限和风险承受力都与你不同。",
+      "example": "看到大佬买入某个行业基金，先问它在组合里承担什么角色，而不是照着买。",
+      "todayCheck": "看公开实盘只问：这个方向说明了什么？能不能用宽基、分批或低风险方式表达？"
     }
   ],
   "forecasts": {
@@ -963,7 +963,7 @@
           "杨思亮",
           "何一铖"
         ],
-        "managerSummary": "张坤 · 13年又345天",
+        "managerSummary": "张坤 · 13年又346天",
         "fundSize": "322.85亿(4只基金)",
         "returns": {
           "oneMonth": "-1.85",
@@ -1020,7 +1020,7 @@
         "managerNames": [
           "朱少醒"
         ],
-        "managerSummary": "朱少醒 · 20年又298天",
+        "managerSummary": "朱少醒 · 20年又299天",
         "fundSize": "195.86亿(3只基金)",
         "returns": {
           "oneMonth": "-1.44",
@@ -1078,7 +1078,7 @@
           "葛兰",
           "赵磊"
         ],
-        "managerSummary": "葛兰 · 11年又62天",
+        "managerSummary": "葛兰 · 11年又63天",
         "fundSize": "314.13亿(4只基金)",
         "returns": {
           "oneMonth": "0.24",
@@ -1135,7 +1135,7 @@
         "managerNames": [
           "刘彦春"
         ],
-        "managerSummary": "刘彦春 · 17年又131天",
+        "managerSummary": "刘彦春 · 17年又132天",
         "fundSize": "240.49亿(11只基金)",
         "returns": {
           "oneMonth": "0.0",
@@ -1192,7 +1192,7 @@
         "managerNames": [
           "谢治宇"
         ],
-        "managerSummary": "谢治宇 · 13年又222天",
+        "managerSummary": "谢治宇 · 13年又223天",
         "fundSize": "392.75亿(5只基金)",
         "returns": {
           "oneMonth": "-2.6",
