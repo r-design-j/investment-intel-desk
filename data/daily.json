@@ -1,11 +1,11 @@
 {
   "asOf": {
-    "display": "2026/09/26 08:45",
-    "iso": "2026-09-26T00:45:00.816Z"
+    "display": "2026/09/27 08:45",
+    "iso": "2026-09-27T00:45:00.280Z"
   },
   "brief": {
     "title": "每日公开数据已更新，先看大A、人民币基金和国内平台",
-    "summary": "A 股快照：上证 3936.52（-0.39%），沪深300 -0.60%；偏震荡，别用一天涨跌判断趋势 海外外部变量：10 年期美债约 5.17%。 本页面只输出公开信息整理、学习框架和非个性化行动清单。",
+    "summary": "A 股快照：上证 3888.37（-1.22%），沪深300 -1.73%；偏震荡，别用一天涨跌判断趋势 海外外部变量：10 年期美债约 5.17%。 本页面只输出公开信息整理、学习框架和非个性化行动清单。",
     "confidence": "中等",
     "tags": [
       "大A优先",
@@ -66,18 +66,18 @@
     {
       "label": "Bitcoin",
       "shortLabel": "BTC",
-      "value": 83869,
+      "value": 84341,
       "unit": "",
-      "score": 46.52250712014675,
-      "note": "CoinGecko 24h -0.87%."
+      "score": 52.15631193414416,
+      "note": "CoinGecko 24h 0.54%."
     },
     {
       "label": "Ethereum",
       "shortLabel": "ETH",
-      "value": 2684.55,
+      "value": 2694.64,
       "unit": "",
-      "score": 49.057990808094736,
-      "note": "CoinGecko 24h -0.24%."
+      "score": 51.40723603616406,
+      "note": "CoinGecko 24h 0.35%."
     },
     {
       "label": "CPI YoY",
@@ -468,7 +468,7 @@
     },
     {
       "source": "Eastmoney A-share indices",
-      "status": "failed (fetch failed)"
+      "status": "ok"
     },
     {
       "source": "Eastmoney China fund public holdings",
@@ -481,12 +481,6 @@
   ],
   "beginnerLessons": [
     {
-      "title": "债券基金也会亏",
-      "plain": "债券基金不是存款。利率上升时，长久期债券基金价格可能下跌。",
-      "example": "短债通常波动较低，长债对利率更敏感；TLT 这类长债 ETF 波动可能很大。",
-      "todayCheck": "看到债券基金前，先看久期、信用质量和你是否能承受净值波动。"
-    },
-    {
       "title": "定投解决不了所有问题",
       "plain": "定投可以降低择时压力，但如果买错资产、仓位过大或期限太短，仍然可能亏钱。",
       "example": "长期宽基定投和短线追热点基金不是一回事。",
@@ -497,6 +491,12 @@
       "plain": "同样跟踪一个指数，费用越低，长期留下来的收益通常越多。",
       "example": "指数基金常见费用率差异看起来只有零点几，但十年二十年会拉开差距。",
       "todayCheck": "同类基金先比较费用率、规模、流动性、跟踪误差。"
+    },
+    {
+      "title": "不要跟着别人实盘无脑买",
+      "plain": "雪球、蛋卷、且慢等平台上的公开组合和实盘通常有延迟，而且对方的资金量、期限和风险承受力都与你不同。",
+      "example": "看到大佬买入某个行业基金，先问它在组合里承担什么角色，而不是照着买。",
+      "todayCheck": "看公开实盘只问：这个方向说明了什么？能不能用宽基、分批或低风险方式表达？"
     }
   ],
   "forecasts": {
@@ -506,11 +506,11 @@
       "confidence": "中等偏低",
       "thesis": "如果大盘指数上涨但成交和行业扩散不足，短线更像情绪修复，不等于趋势确认。",
       "watch": [
-        "上证指数是否站稳 3937 附近",
-        "沪深300涨跌幅 -0.60%，观察核心资产是否跟上",
+        "上证指数是否站稳 3888 附近",
+        "沪深300涨跌幅 -1.73%，观察核心资产是否跟上",
         "外部变量：2026-06-03 ISM Services PMI",
-        "上证指数 3936.52，明日看是否能守住关键整数位",
-        "沪深300今日涨跌 -0.60%，看核心资产是否同步",
+        "上证指数 3888.37，明日看是否能守住关键整数位",
+        "沪深300今日涨跌 -1.73%，看核心资产是否同步",
         "外部变量：10 年期美债约 5.17%"
       ],
       "noviceMove": "新手明日只适合观察或小额分批，不因单日红绿改变长期仓位。"
@@ -854,73 +854,73 @@
     {
       "label": "上证指数",
       "shortLabel": "上证",
-      "value": 3936.52,
+      "value": 3888.37,
       "unit": "",
-      "changePct": -0.39,
-      "change": -15.61,
-      "turnoverCny": 834132862985.2,
-      "score": 45.32,
-      "note": "东方财富快照，涨跌幅 -0.39%。",
+      "changePct": -1.22,
+      "change": -48.15,
+      "turnoverCny": 783613001376.2,
+      "score": 35.36,
+      "note": "东方财富快照，涨跌幅 -1.22%。",
       "sourceUrl": "https://quote.eastmoney.com/center/gridlist.html#index_sh"
     },
     {
       "label": "深证成指",
       "shortLabel": "深成",
-      "value": 13636.07,
+      "value": 13316.97,
       "unit": "",
-      "changePct": -0.64,
-      "change": -87.67,
-      "turnoverCny": 930843553664.3184,
-      "score": 42.32,
-      "note": "东方财富快照，涨跌幅 -0.64%。",
+      "changePct": -2.34,
+      "change": -319.1,
+      "turnoverCny": 869744360964.3094,
+      "score": 21.92,
+      "note": "东方财富快照，涨跌幅 -2.34%。",
       "sourceUrl": "https://quote.eastmoney.com/center/gridlist.html#index_sh"
     },
     {
       "label": "创业板指",
       "shortLabel": "创业板",
-      "value": 3379.61,
+      "value": 3288.95,
       "unit": "",
-      "changePct": -0.6,
-      "change": -20.32,
-      "turnoverCny": 442742055561.55,
-      "score": 42.8,
-      "note": "东方财富快照，涨跌幅 -0.60%。",
+      "changePct": -2.68,
+      "change": -90.66,
+      "turnoverCny": 414217590040.08,
+      "score": 17.839999999999996,
+      "note": "东方财富快照，涨跌幅 -2.68%。",
       "sourceUrl": "https://quote.eastmoney.com/center/gridlist.html#index_sh"
     },
     {
       "label": "沪深300",
       "shortLabel": "沪深300",
-      "value": 4517.28,
+      "value": 4439.14,
       "unit": "",
-      "changePct": -0.6,
-      "change": -27.31,
-      "turnoverCny": 378289417106.7,
-      "score": 42.8,
-      "note": "东方财富快照，涨跌幅 -0.60%。",
+      "changePct": -1.73,
+      "change": -78.14,
+      "turnoverCny": 375461676142.8,
+      "score": 29.240000000000002,
+      "note": "东方财富快照，涨跌幅 -1.73%。",
       "sourceUrl": "https://quote.eastmoney.com/center/gridlist.html#index_sh"
     },
     {
       "label": "中证500",
       "shortLabel": "中证500",
-      "value": 7791.82,
+      "value": 7624.07,
       "unit": "",
-      "changePct": -0.47,
-      "change": -37.12,
-      "turnoverCny": 273595880952,
-      "score": 44.36,
-      "note": "东方财富快照，涨跌幅 -0.47%。",
+      "changePct": -2.15,
+      "change": -167.75,
+      "turnoverCny": 269922500703.9,
+      "score": 24.200000000000003,
+      "note": "东方财富快照，涨跌幅 -2.15%。",
       "sourceUrl": "https://quote.eastmoney.com/center/gridlist.html#index_sh"
     },
     {
       "label": "科创50",
       "shortLabel": "科创50",
-      "value": 1660.85,
+      "value": 1621.87,
       "unit": "",
-      "changePct": -0.25,
-      "change": -4.19,
-      "turnoverCny": 75175421333.6,
-      "score": 47,
-      "note": "东方财富快照，涨跌幅 -0.25%。",
+      "changePct": -2.35,
+      "change": -38.98,
+      "turnoverCny": 69988049488.7,
+      "score": 21.799999999999997,
+      "note": "东方财富快照，涨跌幅 -2.35%。",
       "sourceUrl": "https://quote.eastmoney.com/center/gridlist.html#index_sh"
     }
   ],
@@ -931,8 +931,8 @@
       "confidence": "中等偏低",
       "thesis": "如果大盘指数上涨但成交和行业扩散不足，短线更像情绪修复，不等于趋势确认。",
       "watch": [
-        "上证指数是否站稳 3937 附近",
-        "沪深300涨跌幅 -0.60%，观察核心资产是否跟上",
+        "上证指数是否站稳 3888 附近",
+        "沪深300涨跌幅 -1.73%，观察核心资产是否跟上",
         "外部变量：2026-06-03 ISM Services PMI"
       ],
       "noviceMove": "新手明日不要追单日强势行业，先确认自己是做长期配置还是短线交易。"
@@ -963,7 +963,7 @@
           "杨思亮",
           "何一铖"
         ],
-        "managerSummary": "张坤 · 14年又1天",
+        "managerSummary": "张坤 · 14年又2天",
         "fundSize": "322.85亿(4只基金)",
         "returns": {
           "oneMonth": "-2.58",
@@ -1020,7 +1020,7 @@
         "managerNames": [
           "朱少醒"
         ],
-        "managerSummary": "朱少醒 · 20年又319天",
+        "managerSummary": "朱少醒 · 20年又320天",
         "fundSize": "195.86亿(3只基金)",
         "returns": {
           "oneMonth": "-4.5",
@@ -1078,7 +1078,7 @@
           "葛兰",
           "赵磊"
         ],
-        "managerSummary": "葛兰 · 11年又83天",
+        "managerSummary": "葛兰 · 11年又84天",
         "fundSize": "314.13亿(4只基金)",
         "returns": {
           "oneMonth": "0.68",
@@ -1135,7 +1135,7 @@
         "managerNames": [
           "刘彦春"
         ],
-        "managerSummary": "刘彦春 · 17年又152天",
+        "managerSummary": "刘彦春 · 17年又153天",
         "fundSize": "240.49亿(11只基金)",
         "returns": {
           "oneMonth": "-3.36",
@@ -1192,7 +1192,7 @@
         "managerNames": [
           "谢治宇"
         ],
-        "managerSummary": "谢治宇 · 13年又243天",
+        "managerSummary": "谢治宇 · 13年又244天",
         "fundSize": "392.75亿(5只基金)",
         "returns": {
           "oneMonth": "-2.34",
