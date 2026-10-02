@@ -1,11 +1,11 @@
 {
   "asOf": {
-    "display": "2026/10/01 09:23",
-    "iso": "2026-10-01T01:23:22.911Z"
+    "display": "2026/10/02 09:44",
+    "iso": "2026-10-02T01:44:41.122Z"
   },
   "brief": {
     "title": "每日公开数据已更新，先看大A、人民币基金和国内平台",
-    "summary": "A 股快照：上证 3842.19（+0.31%），沪深300 +0.29%；偏震荡，别用一天涨跌判断趋势 海外外部变量：10 年期美债约 5.29%。 本页面只输出公开信息整理、学习框架和非个性化行动清单。",
+    "summary": "A 股快照：上证 3842.19（+0.31%），沪深300 +0.29%；偏震荡，别用一天涨跌判断趋势 海外外部变量：10 年期美债约 5.24%。 本页面只输出公开信息整理、学习框架和非个性化行动清单。",
     "confidence": "中等",
     "tags": [
       "大A优先",
@@ -34,50 +34,50 @@
     {
       "label": "3M Treasury",
       "shortLabel": "3M",
-      "value": 4.2,
+      "value": 4.17,
       "unit": "%",
-      "score": 67.2,
-      "note": "U.S. Treasury latest 2026-09-30."
+      "score": 66.72,
+      "note": "U.S. Treasury latest 2026-10-01."
     },
     {
       "label": "2Y Treasury",
       "shortLabel": "2Y",
-      "value": 4.88,
+      "value": 4.78,
       "unit": "%",
-      "score": 78.08,
-      "note": "U.S. Treasury latest 2026-09-30."
+      "score": 76.48,
+      "note": "U.S. Treasury latest 2026-10-01."
     },
     {
       "label": "10Y Treasury",
       "shortLabel": "10Y",
-      "value": 5.29,
+      "value": 5.24,
       "unit": "%",
-      "score": 84.64,
-      "note": "U.S. Treasury latest 2026-09-30."
+      "score": 83.84,
+      "note": "U.S. Treasury latest 2026-10-01."
     },
     {
       "label": "30Y Treasury",
       "shortLabel": "30Y",
-      "value": 5.64,
+      "value": 5.61,
       "unit": "%",
-      "score": 90.24,
-      "note": "U.S. Treasury latest 2026-09-30."
+      "score": 89.76,
+      "note": "U.S. Treasury latest 2026-10-01."
     },
     {
       "label": "Bitcoin",
       "shortLabel": "BTC",
-      "value": 83612,
+      "value": 84575,
       "unit": "",
-      "score": 51.09851729596367,
-      "note": "CoinGecko 24h 0.27%."
+      "score": 54.900774783753924,
+      "note": "CoinGecko 24h 1.23%."
     },
     {
       "label": "Ethereum",
       "shortLabel": "ETH",
-      "value": 2688.84,
+      "value": 2700.06,
       "unit": "",
-      "score": 52.615339707716686,
-      "note": "CoinGecko 24h 0.65%."
+      "score": 51.581191887789544,
+      "note": "CoinGecko 24h 0.40%."
     },
     {
       "label": "CPI YoY",
@@ -174,6 +174,18 @@
       "url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/fund-distributions-investor-bulletin"
     },
     {
+      "title": "SEC Proposal Would Address How Investment Advisers and Funds Can Custody Crypto Assets Under the Federal Securities Laws",
+      "category": "Regulation",
+      "impact": "数字资产监管变化会影响交易合规、托管风险和主题资产情绪。",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-100-sec-proposal-would-address-how-investment-advisers-funds-can-custody-crypto-assets-under-federal"
+    },
+    {
+      "title": "SEC’s Division of Examinations Announces New Exam Handbook",
+      "category": "Regulation",
+      "impact": "纳入每日新闻队列，作为事实输入而非直接交易信号。",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-99-secs-division-examinations-announces-new-exam-handbook"
+    },
+    {
       "title": "SEC Charges Meyer Global Management and Its CEO With Defrauding Retail Investors in Private Funds That Held Interests in SpaceX and Other Pre-IPO Securities",
       "category": "Regulation",
       "impact": "投资者保护信息提示需要先验证平台、人员资质和资金流向。",
@@ -196,18 +208,6 @@
       "category": "Regulation",
       "impact": "纳入每日新闻队列，作为事实输入而非直接交易信号。",
       "url": "https://www.sec.gov/newsroom/press-releases/2026-94-sec-charges-registered-investment-adviser-zoe-financial-failure-disclose-conflict-interest"
-    },
-    {
-      "title": "SEC Publishes Updated Market Statistics, Highlighting Increase in IPOs and Proceeds Raised",
-      "category": "Regulation",
-      "impact": "纳入每日新闻队列，作为事实输入而非直接交易信号。",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-93-sec-publishes-updated-market-statistics-highlighting-increase-ipos-proceeds-raised"
-    },
-    {
-      "title": "SEC Charges South Florida Resident and His Company for Alleged Investment Scheme Defrauding Law Enforcement",
-      "category": "Regulation",
-      "impact": "投资者保护信息提示需要先验证平台、人员资质和资金流向。",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-92-sec-charges-south-florida-resident-his-company-alleged-investment-scheme-defrauding-law-enforcement"
     }
   ],
   "calendar": [
@@ -468,7 +468,7 @@
     },
     {
       "source": "Eastmoney A-share indices",
-      "status": "ok"
+      "status": "failed (502 Bad Gateway)"
     },
     {
       "source": "Eastmoney China fund public holdings",
@@ -481,12 +481,6 @@
   ],
   "beginnerLessons": [
     {
-      "title": "新手先分清三笔钱",
-      "plain": "短期要用的钱不应该放进高波动资产；长期不用的钱才适合承受股票基金波动。",
-      "example": "房租、生活费和 3-12 个月应急金先放现金桶；5 年以上长期资金再考虑权益基金。",
-      "todayCheck": "先写下：我这笔钱什么时候要用？如果亏 20% 会不会影响生活？"
-    },
-    {
       "title": "宽基基金适合做核心仓",
       "plain": "宽基基金买的是一整个市场或一大批公司，不押单一公司，适合新手做长期学习对象。",
       "example": "国内常见观察样例包括沪深300 ETF、中证A500 ETF、中证500 ETF；海外可以把 VOO/SPY 当外部学习样本。",
@@ -497,6 +491,12 @@
       "plain": "债券基金不是存款。利率上升时，长久期债券基金价格可能下跌。",
       "example": "短债通常波动较低，长债对利率更敏感；TLT 这类长债 ETF 波动可能很大。",
       "todayCheck": "看到债券基金前，先看久期、信用质量和你是否能承受净值波动。"
+    },
+    {
+      "title": "定投解决不了所有问题",
+      "plain": "定投可以降低择时压力，但如果买错资产、仓位过大或期限太短，仍然可能亏钱。",
+      "example": "长期宽基定投和短线追热点基金不是一回事。",
+      "todayCheck": "定投前先设上限：每月多少钱、投多久、什么条件下停止复盘。"
     }
   ],
   "forecasts": {
@@ -511,7 +511,7 @@
         "外部变量：2026-06-03 ISM Services PMI",
         "上证指数 3842.19，明日看是否能守住关键整数位",
         "沪深300今日涨跌 0.29%，看核心资产是否同步",
-        "外部变量：10 年期美债约 5.29%"
+        "外部变量：10 年期美债约 5.24%"
       ],
       "noviceMove": "新手明日只适合观察或小额分批，不因单日红绿改变长期仓位。"
     },
@@ -554,7 +554,7 @@
       "suitableFor": "3-12 个月内可能要用的钱、应急金、暂时不想承受股票波动的资金。",
       "buyGuidance": "新手先把现金桶补足，再考虑风险资产；货币基金和短债收益会随市场利率变化。",
       "risk": "不是银行存款；仍有流动性、信用、净值波动和再投资风险。",
-      "currentRead": "当前 10 年期美债约 5.29%，债券和成长资产都要看利率变化。"
+      "currentRead": "当前 10 年期美债约 5.24%，债券和成长资产都要看利率变化。"
     },
     {
       "bucket": "A股宽基核心",
@@ -645,7 +645,7 @@
       "suitableFor": "不想全仓股票、需要组合稳定性的投资者。",
       "buyGuidance": "利率仍高时优先看久期；不理解久期前别重仓长债。",
       "risk": "利率上升会压低债券基金净值，信用风险也会影响价格。",
-      "currentRead": "当前 10 年期美债约 5.29%，债券和成长资产都要看利率变化。"
+      "currentRead": "当前 10 年期美债约 5.24%，债券和成长资产都要看利率变化。"
     },
     {
       "bucket": "黄金/抗通胀观察",
