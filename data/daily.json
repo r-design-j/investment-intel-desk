@@ -1,7 +1,7 @@
 {
   "asOf": {
-    "display": "2026/10/17 08:40",
-    "iso": "2026-10-17T00:40:02.285Z"
+    "display": "2026/10/18 08:07",
+    "iso": "2026-10-18T00:07:57.689Z"
   },
   "brief": {
     "title": "每日公开数据已更新，先看大A、人民币基金和国内平台",
@@ -66,18 +66,18 @@
     {
       "label": "Bitcoin",
       "shortLabel": "BTC",
-      "value": 81582,
+      "value": 81350,
       "unit": "",
-      "score": 46.36283075290383,
-      "note": "CoinGecko 24h -0.91%."
+      "score": 49.17104039639437,
+      "note": "CoinGecko 24h -0.21%."
     },
     {
       "label": "Ethereum",
       "shortLabel": "ETH",
-      "value": 2422.08,
+      "value": 2397.3,
       "unit": "",
-      "score": 46.78084893778419,
-      "note": "CoinGecko 24h -0.80%."
+      "score": 46.26892584784712,
+      "note": "CoinGecko 24h -0.93%."
     },
     {
       "label": "CPI YoY",
@@ -460,7 +460,7 @@
     },
     {
       "source": "Stooq ETF CSV",
-      "status": "failed (404 Not Found)"
+      "status": "failed (fetch failed)"
     },
     {
       "source": "CoinGecko crypto",
@@ -481,12 +481,6 @@
   ],
   "beginnerLessons": [
     {
-      "title": "债券基金也会亏",
-      "plain": "债券基金不是存款。利率上升时，长久期债券基金价格可能下跌。",
-      "example": "短债通常波动较低，长债对利率更敏感；TLT 这类长债 ETF 波动可能很大。",
-      "todayCheck": "看到债券基金前，先看久期、信用质量和你是否能承受净值波动。"
-    },
-    {
       "title": "定投解决不了所有问题",
       "plain": "定投可以降低择时压力，但如果买错资产、仓位过大或期限太短，仍然可能亏钱。",
       "example": "长期宽基定投和短线追热点基金不是一回事。",
@@ -497,6 +491,12 @@
       "plain": "同样跟踪一个指数，费用越低，长期留下来的收益通常越多。",
       "example": "指数基金常见费用率差异看起来只有零点几，但十年二十年会拉开差距。",
       "todayCheck": "同类基金先比较费用率、规模、流动性、跟踪误差。"
+    },
+    {
+      "title": "不要跟着别人实盘无脑买",
+      "plain": "雪球、蛋卷、且慢等平台上的公开组合和实盘通常有延迟，而且对方的资金量、期限和风险承受力都与你不同。",
+      "example": "看到大佬买入某个行业基金，先问它在组合里承担什么角色，而不是照着买。",
+      "todayCheck": "看公开实盘只问：这个方向说明了什么？能不能用宽基、分批或低风险方式表达？"
     }
   ],
   "forecasts": {
@@ -963,7 +963,7 @@
           "杨思亮",
           "何一铖"
         ],
-        "managerSummary": "张坤 · 14年又22天",
+        "managerSummary": "张坤 · 14年又23天",
         "fundSize": "307.94亿(3只基金)",
         "returns": {
           "oneMonth": "-4.88",
@@ -1020,7 +1020,7 @@
         "managerNames": [
           "朱少醒"
         ],
-        "managerSummary": "朱少醒 · 20年又340天",
+        "managerSummary": "朱少醒 · 20年又341天",
         "fundSize": "195.86亿(3只基金)",
         "returns": {
           "oneMonth": "-10.28",
@@ -1078,7 +1078,7 @@
           "葛兰",
           "赵磊"
         ],
-        "managerSummary": "葛兰 · 11年又104天",
+        "managerSummary": "葛兰 · 11年又105天",
         "fundSize": "314.13亿(4只基金)",
         "returns": {
           "oneMonth": "-7.37",
@@ -1135,7 +1135,7 @@
         "managerNames": [
           "刘彦春"
         ],
-        "managerSummary": "刘彦春 · 17年又173天",
+        "managerSummary": "刘彦春 · 17年又174天",
         "fundSize": "240.49亿(11只基金)",
         "returns": {
           "oneMonth": "-0.07",
@@ -1192,51 +1192,51 @@
         "managerNames": [
           "谢治宇"
         ],
-        "managerSummary": "谢治宇 · 13年又262天",
+        "managerSummary": "谢治宇 · 13年又265天",
         "fundSize": "392.75亿(5只基金)",
         "returns": {
-          "oneMonth": "-8.08",
-          "threeMonth": "-24.68",
-          "sixMonth": "-10.93",
-          "oneYear": "2.35"
+          "oneMonth": "-12.04",
+          "threeMonth": "-23.24",
+          "sixMonth": "-13.36",
+          "oneYear": "-2.16"
         },
-        "stockPosition": 93.95,
+        "stockPosition": 95,
         "holdings": [
           {
             "code": "002475",
             "name": "立讯精密",
-            "changePct": -2.62,
-            "price": 44.94
+            "changePct": 0.04,
+            "price": 44.67
           },
           {
             "code": "600160",
             "name": "巨化股份",
-            "changePct": -2.08,
-            "price": 30.56
+            "changePct": -1.06,
+            "price": 29.75
           },
           {
             "code": "688249",
             "name": "晶合集成",
-            "changePct": -2.84,
-            "price": 28.37
+            "changePct": -0.8,
+            "price": 27.39
           },
           {
             "code": "300308",
             "name": "中际旭创",
-            "changePct": -5.73,
-            "price": 692.9
+            "changePct": 1.99,
+            "price": 670
           },
           {
             "code": "688981",
             "name": "中芯国际",
-            "changePct": -3.25,
-            "price": 102.55
+            "changePct": -1.7,
+            "price": 102.66
           },
           {
             "code": "688041",
             "name": "海光信息",
-            "changePct": -3.95,
-            "price": 201.46
+            "changePct": -0.66,
+            "price": 192.54
           }
         ],
         "lesson": "兴全合润适合观察均衡成长型主动基金的持仓变化。",
