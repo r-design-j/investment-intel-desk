@@ -1,7 +1,7 @@
 {
   "asOf": {
-    "display": "2026/11/07 10:07",
-    "iso": "2026-11-07T02:07:31.990Z"
+    "display": "2026/11/08 09:39",
+    "iso": "2026-11-08T01:39:49.122Z"
   },
   "brief": {
     "title": "每日公开数据已更新，先看大A、人民币基金和国内平台",
@@ -66,18 +66,18 @@
     {
       "label": "Bitcoin",
       "shortLabel": "BTC",
-      "value": 75977,
+      "value": 75705,
       "unit": "",
-      "score": 49.60789391353273,
-      "note": "CoinGecko 24h -0.10%."
+      "score": 48.97813746293796,
+      "note": "CoinGecko 24h -0.26%."
     },
     {
       "label": "Ethereum",
       "shortLabel": "ETH",
-      "value": 2244.83,
+      "value": 2233.08,
       "unit": "",
-      "score": 51.370631975647214,
-      "note": "CoinGecko 24h 0.34%."
+      "score": 48.27226294937557,
+      "note": "CoinGecko 24h -0.43%."
     },
     {
       "label": "CPI YoY",
@@ -460,7 +460,7 @@
     },
     {
       "source": "Stooq ETF CSV",
-      "status": "failed (fetch failed)"
+      "status": "failed (404 Not Found)"
     },
     {
       "source": "CoinGecko crypto",
@@ -481,12 +481,6 @@
   ],
   "beginnerLessons": [
     {
-      "title": "债券基金也会亏",
-      "plain": "债券基金不是存款。利率上升时，长久期债券基金价格可能下跌。",
-      "example": "短债通常波动较低，长债对利率更敏感；TLT 这类长债 ETF 波动可能很大。",
-      "todayCheck": "看到债券基金前，先看久期、信用质量和你是否能承受净值波动。"
-    },
-    {
       "title": "定投解决不了所有问题",
       "plain": "定投可以降低择时压力，但如果买错资产、仓位过大或期限太短，仍然可能亏钱。",
       "example": "长期宽基定投和短线追热点基金不是一回事。",
@@ -497,6 +491,12 @@
       "plain": "同样跟踪一个指数，费用越低，长期留下来的收益通常越多。",
       "example": "指数基金常见费用率差异看起来只有零点几，但十年二十年会拉开差距。",
       "todayCheck": "同类基金先比较费用率、规模、流动性、跟踪误差。"
+    },
+    {
+      "title": "不要跟着别人实盘无脑买",
+      "plain": "雪球、蛋卷、且慢等平台上的公开组合和实盘通常有延迟，而且对方的资金量、期限和风险承受力都与你不同。",
+      "example": "看到大佬买入某个行业基金，先问它在组合里承担什么角色，而不是照着买。",
+      "todayCheck": "看公开实盘只问：这个方向说明了什么？能不能用宽基、分批或低风险方式表达？"
     }
   ],
   "forecasts": {
@@ -963,7 +963,7 @@
           "杨思亮",
           "何一铖"
         ],
-        "managerSummary": "张坤 · 14年又43天",
+        "managerSummary": "张坤 · 14年又44天",
         "fundSize": "293.07亿(3只基金)",
         "returns": {
           "oneMonth": "-3.77",
@@ -1020,7 +1020,7 @@
         "managerNames": [
           "朱少醒"
         ],
-        "managerSummary": "朱少醒 · 20年又361天",
+        "managerSummary": "朱少醒 · 20年又362天",
         "fundSize": "167.78亿(3只基金)",
         "returns": {
           "oneMonth": "-11.5",
@@ -1078,7 +1078,7 @@
           "葛兰",
           "赵磊"
         ],
-        "managerSummary": "葛兰 · 11年又125天",
+        "managerSummary": "葛兰 · 11年又126天",
         "fundSize": "332.67亿(4只基金)",
         "returns": {
           "oneMonth": "-5.06",
@@ -1133,9 +1133,10 @@
         "name": "景顺长城新兴成长混合A",
         "style": "消费成长",
         "managerNames": [
-          "刘彦春"
+          "刘彦春",
+          "农冰立"
         ],
-        "managerSummary": "刘彦春 · 17年又194天",
+        "managerSummary": "刘彦春 · 17年又195天",
         "fundSize": "218.81亿(11只基金)",
         "returns": {
           "oneMonth": "4.84",
@@ -1192,7 +1193,7 @@
         "managerNames": [
           "谢治宇"
         ],
-        "managerSummary": "谢治宇 · 13年又285天",
+        "managerSummary": "谢治宇 · 13年又286天",
         "fundSize": "302.67亿(5只基金)",
         "returns": {
           "oneMonth": "-10.13",
