@@ -1,7 +1,7 @@
 {
   "asOf": {
-    "display": "2026/11/23 10:56",
-    "iso": "2026-11-23T02:56:36.474Z"
+    "display": "2026/11/24 14:12",
+    "iso": "2026-11-24T06:12:53.707Z"
   },
   "brief": {
     "title": "每日公开数据已更新，先看大A、人民币基金和国内平台",
@@ -34,10 +34,10 @@
     {
       "label": "3M Treasury",
       "shortLabel": "3M",
-      "value": 4.32,
+      "value": 4.37,
       "unit": "%",
-      "score": 69.12,
-      "note": "U.S. Treasury latest 2026-11-20."
+      "score": 69.92,
+      "note": "U.S. Treasury latest 2026-11-23."
     },
     {
       "label": "2Y Treasury",
@@ -45,7 +45,7 @@
       "value": 4.63,
       "unit": "%",
       "score": 74.08,
-      "note": "U.S. Treasury latest 2026-11-20."
+      "note": "U.S. Treasury latest 2026-11-23."
     },
     {
       "label": "10Y Treasury",
@@ -53,31 +53,31 @@
       "value": 4.92,
       "unit": "%",
       "score": 78.72,
-      "note": "U.S. Treasury latest 2026-11-20."
+      "note": "U.S. Treasury latest 2026-11-23."
     },
     {
       "label": "30Y Treasury",
       "shortLabel": "30Y",
-      "value": 5.31,
+      "value": 5.29,
       "unit": "%",
-      "score": 84.96,
-      "note": "U.S. Treasury latest 2026-11-20."
+      "score": 84.64,
+      "note": "U.S. Treasury latest 2026-11-23."
     },
     {
       "label": "Bitcoin",
       "shortLabel": "BTC",
-      "value": 60487,
+      "value": 60447,
       "unit": "",
-      "score": 56.88584336751551,
-      "note": "CoinGecko 24h 1.72%."
+      "score": 42.1848596854464,
+      "note": "CoinGecko 24h -1.95%."
     },
     {
       "label": "Ethereum",
       "shortLabel": "ETH",
-      "value": 1702.34,
+      "value": 1698.02,
       "unit": "",
-      "score": 58.212362076281025,
-      "note": "CoinGecko 24h 2.05%."
+      "score": 43.35134624718187,
+      "note": "CoinGecko 24h -1.66%."
     },
     {
       "label": "CPI YoY",
@@ -162,16 +162,16 @@
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm"
     },
     {
-      "title": "World Investor Week 2026 – Investor Bulletin",
+      "title": "Investor Bulletin: How to Open a Brokerage Account",
       "category": "Regulation",
       "impact": "纳入每日新闻队列，作为事实输入而非直接交易信号。",
-      "url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/world-investor-week-2026-investor-bulletin"
+      "url": "http://www.sec.gov/investor/alerts/ib_openbrokerageaccount.htm"
     },
     {
-      "title": "Scammers Using SEC Exempt Reporting Adviser (ERA) Filings to Look Legitimate – Investor Alert",
+      "title": "Investor Bulletin: How Fees and Expenses Affect Your Investment Portfolio",
       "category": "Regulation",
-      "impact": "投资者保护信息提示需要先验证平台、人员资质和资金流向。",
-      "url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/ERA-filing-scams"
+      "impact": "纳入每日新闻队列，作为事实输入而非直接交易信号。",
+      "url": "http://www.sec.gov/investor/alerts/ib_fees_expenses.pdf"
     },
     {
       "title": "SEC Issues Proposal to Restructure the Consolidated Audit Trail",
@@ -186,6 +186,18 @@
       "url": "https://www.sec.gov/newsroom/press-releases/2026-116-sec-charges-indianapolis-based-backward-hat-capital-its-co-founders-560-million-dollar-offering"
     },
     {
+      "title": "World Investor Week 2026 – Investor Bulletin",
+      "category": "Regulation",
+      "impact": "纳入每日新闻队列，作为事实输入而非直接交易信号。",
+      "url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/world-investor-week-2026-investor-bulletin"
+    },
+    {
+      "title": "Scammers Using SEC Exempt Reporting Adviser (ERA) Filings to Look Legitimate – Investor Alert",
+      "category": "Regulation",
+      "impact": "投资者保护信息提示需要先验证平台、人员资质和资金流向。",
+      "url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/ERA-filing-scams"
+    },
+    {
       "title": "SEC: Eight Entities Used Fake Crypto Asset Trading Platforms to Steal More Than $37 Million From U.S. Investors",
       "category": "Regulation",
       "impact": "政策利率和声明措辞会影响股债估值、美元和现金收益率。",
@@ -196,18 +208,6 @@
       "category": "Regulation",
       "impact": "纳入每日新闻队列，作为事实输入而非直接交易信号。",
       "url": "https://www.sec.gov/newsroom/press-releases/2026-114-sec-proposes-executive-director-compensation-disclosure-reforms"
-    },
-    {
-      "title": "SEC Announces Enforcement Annual Results for Fiscal Year 2026",
-      "category": "Regulation",
-      "impact": "纳入每日新闻队列，作为事实输入而非直接交易信号。",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-113-sec-announces-enforcement-annual-results-fiscal-year-2026"
-    },
-    {
-      "title": "Federal Reserve issues FOMC statement",
-      "category": "Policy",
-      "impact": "政策利率和声明措辞会影响股债估值、美元和现金收益率。",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm"
     }
   ],
   "calendar": [
@@ -468,7 +468,7 @@
     },
     {
       "source": "Eastmoney A-share indices",
-      "status": "ok"
+      "status": "failed (502 Bad Gateway)"
     },
     {
       "source": "Eastmoney China fund public holdings",
@@ -481,12 +481,6 @@
   ],
   "beginnerLessons": [
     {
-      "title": "费用率会慢慢吃掉收益",
-      "plain": "同样跟踪一个指数，费用越低，长期留下来的收益通常越多。",
-      "example": "指数基金常见费用率差异看起来只有零点几，但十年二十年会拉开差距。",
-      "todayCheck": "同类基金先比较费用率、规模、流动性、跟踪误差。"
-    },
-    {
       "title": "不要跟着别人实盘无脑买",
       "plain": "雪球、蛋卷、且慢等平台上的公开组合和实盘通常有延迟，而且对方的资金量、期限和风险承受力都与你不同。",
       "example": "看到大佬买入某个行业基金，先问它在组合里承担什么角色，而不是照着买。",
@@ -497,6 +491,12 @@
       "plain": "基金是把很多人的钱交给一个产品去买股票、债券、现金工具或其它资产。它会涨也会跌，风险来自底层资产。",
       "example": "股票基金像一篮子股票，债券基金像一篮子债券，货币基金更接近现金管理工具。",
       "todayCheck": "买之前先问：这只基金主要买什么？最差可能跌多少？我多久不用这笔钱？"
+    },
+    {
+      "title": "新手先分清三笔钱",
+      "plain": "短期要用的钱不应该放进高波动资产；长期不用的钱才适合承受股票基金波动。",
+      "example": "房租、生活费和 3-12 个月应急金先放现金桶；5 年以上长期资金再考虑权益基金。",
+      "todayCheck": "先写下：我这笔钱什么时候要用？如果亏 20% 会不会影响生活？"
     }
   ],
   "forecasts": {
